@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Planner</title>
+</head>
+<body>
+    {% for event in events %}
+        {{ event.event_name}}<br>
+        {{ event.facility_name }}<br>
+        {{ event.event_date }}<br>
+        {{ event.event_time }}<br>
+        {{ event.event_description }}<br>
+    {% endfor %}
+</body>
+</html>
