@@ -2,6 +2,14 @@ body {
     background-color: #fefae0;
 }
 
-.card-color{
-    color: #faedcd;
+.card{
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
+/* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
+.parallax-container 
+	.valign-wrapper	{
+		height: 100%;
+    }
+
