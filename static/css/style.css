@@ -13,3 +13,9 @@ body {
 		height: 100%;
     }
 
+.btn-parallax{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 10rem;
+}
+
