@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="parallax-container">
+      <div class="parallax"><img src="{{ url_for('static', filename='images/side-line.jpg') }}"></div>
+    </div>
+
 <H1 class="grey-text text-darken-4 center-align">Upcoming Events</H1>
 
   <div class="row">
       {% for event in events %}
       <div class="container">
-    <div class="card center-align hoverable col s12 m4">
+    <div class="card brown lighten-5 center-align hoverable col s12 m4">
       <div class="card-title grey-text text-darken-4 center-align">
            <span class="grey-text text-align-center text-darken-4">
                {{ event.event_name}}
