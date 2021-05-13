@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <H2 class="center-align">Register</H2>
+    <H2 class="center-align">Log In</H2>
 
   <div class="row">
-      <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
+      <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
           <div class="card-panel brown lighten-5">
               <!--username  -->
               <div class="row">
@@ -24,17 +24,17 @@
                       <span class="helper-text" data-error="Password must be at between 5 and 15 characters" data-success="Accepted"></span>
                   </div>
                 </div>
-                <!--register button-->
+                <!--Log In button-->
                 <div class="row">
-                    <button type="submit" class="col s4 offset-s4 waves-effect waves-light red lighten-2 btn">Register</button>
+                    <button type="submit" class="col s4 offset-s4 waves-effect waves-light red lighten-2 btn">Log In</button>
                 </div>
           </div>
       </form>
   </div>
-<!--Log in button-->
-  <h6 class="center-align">Already Registered?</h6>
+<!--Register Button-->
+  <h6 class="center-align">Not Registered Yet?</h6>
   <div class="row">
-  <a href="{{ url_for('login') }}" class="col s2 offset-s5 waves-effect waves-light blue lighten-3 btn">Log In</a>
+  <a href="{{ url_for('register') }}" class="col s2 offset-s5 waves-effect waves-light blue lighten-3 btn">Register</a>
     </div>
 
 
