@@ -26,7 +26,9 @@
                 </div>
                 <!--Log In button-->
                 <div class="row">
-                    <button type="submit" class="col s4 offset-s4 waves-effect waves-light red lighten-2 btn">Log In</button>
+                    <p class="center-align">
+                    <button type="submit" class="waves-effect waves-light red lighten-2 btn">Log In</button>
+                    </p>
                 </div>
           </div>
       </form>
@@ -34,8 +36,11 @@
 <!--Register Button-->
   <h6 class="center-align">Not Registered Yet?</h6>
   <div class="row">
-  <a href="{{ url_for('register') }}" class="col s2 offset-s5 waves-effect waves-light blue lighten-3 btn">Register</a>
+     <p class="center-align">
+         <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn">Register</a>
+    </p>
     </div>
+
 
 
 {% endblock %}
