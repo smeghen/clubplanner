@@ -1,45 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <H2 class="center-align">Log In</H2>
 
-  <div class="row">
-      <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
-          <div class="card-panel brown lighten-5">
-              <!--username  -->
-              <div class="row">
-                  <div class="input-field col s12  grey-text text-darken-4 center-align">
-                      <input id="username" name="username" type="text" minlength="5"
-                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                      <label for="username">Username</label>
-                      <span class="helper-text" data-error="Username must be at least 5 characters and can contain numbers" data-success="Accepted"></span>
-                  </div>
-              </div>
-              <!--password-->
-              <div class="row">
-                  <div class="input-field col s12 grey-text text-darken-4 center-align">
-                      <input id="password" name="password" type="password" minlength="5"
-                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                      <label for="password">Password</label>
-                      <span class="helper-text" data-error="Password must be at between 5 and 15 characters" data-success="Accepted"></span>
-                  </div>
+
+<div class="row">
+    <div class="card">
+        <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
+            <div class="card-action brown lighten-3 white-text">
+                <h3 class="center-align">Log In</h3>
+            </div>
+            <div class="card-content brown lighten-5">
+                <!--username  -->
+                <div class="row">
+                    <div class="input-field col s12  grey-text text-darken-4 center-align">
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                        <span class="helper-text"
+                            data-error="Username must be at least 5 characters and can contain numbers"
+                            data-success="Accepted"></span>
+                    </div>
+                </div>
+                <!--password-->
+                <div class="row">
+                    <div class="input-field col s12 grey-text text-darken-4 center-align">
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                        <span class="helper-text" data-error="Password must be at between 5 and 15 characters"
+                            data-success="Accepted"></span>
+                    </div>
                 </div>
                 <!--Log In button-->
                 <div class="row">
                     <p class="center-align">
-                    <button type="submit" class="waves-effect waves-light red lighten-2 btn">Log In</button>
+                        <button type="submit" class="waves-effect waves-light red lighten-2 btn">Log In</button>
                     </p>
                 </div>
-          </div>
-      </form>
-  </div>
-<!--Register Button-->
-  <h6 class="center-align">Not Registered Yet?</h6>
-  <div class="row">
-     <p class="center-align">
-         <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn">Register</a>
-    </p>
+            </div>
     </div>
+    </form>
+</div>
+</div>
+<!--Register Button-->
+<h6 class="center-align">Not Registered Yet?</h6>
+<div class="row">
+    <p class="center-align">
+        <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn">Register</a>
+    </p>
+</div>
 
 
 

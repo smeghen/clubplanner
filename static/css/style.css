@@ -1,11 +1,19 @@
+/* Colour */
+
 body {
     background-color: #fefae0;
 }
 
+.sidenav li a{
+    color: white;
+}
+
+/* Home Page */ 
 .card{
     margin-left: 5px;
     margin-right: 5px;
 }
+
 
 /* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
 .parallax-container 
@@ -18,4 +26,5 @@ body {
     margin-right: 10rem;
     margin-top: 10rem;
 }
+
 
