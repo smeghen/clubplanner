@@ -4,11 +4,11 @@
     <H2 class="center-align">Register</H2>
 
   <div class="row">
-      <form class="col s6 m4 offset-m4" method="POST" action="{{ url_for('register') }}">
+      <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
           <div class="card-panel brown lighten-5">
               <!--username  -->
               <div class="row">
-                  <div class="input-field col s8 m8 offset-m2 grey-text text-darken-4 center-align">
+                  <div class="input-field col s12  grey-text text-darken-4 center-align">
                       <input id="username" name="username" type="text" minlength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                       <label for="username">Username</label>
@@ -17,7 +17,7 @@
               </div>
               <!--password-->
               <div class="row">
-                  <div class="input-field col s8 m8  offset-m2 grey-text text-darken-4 center-align">
+                  <div class="input-field col s12 grey-text text-darken-4 center-align">
                       <input id="password" name="password" type="password" minlength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                       <label for="password">Password</label>
@@ -26,10 +26,16 @@
                 </div>
                 <!--register button-->
                 <div class="row">
-                    <button type="submit" class="col s8 m8 offset-m2 waves-effect waves-light red lighten-2 btn">Register</button>
+                    <button type="submit" class="col s4 offset-s4 waves-effect waves-light red lighten-2 btn">Register</button>
                 </div>
           </div>
       </form>
   </div>
+
+  <h6 class="center-align">Already Registered?</h6>
+  <div class="row">
+  <a class="col s2 offset-s5 waves-effect waves-light blue lighten-3 btn">Log In</a>
+    </div>
+
 
 {% endblock %}
