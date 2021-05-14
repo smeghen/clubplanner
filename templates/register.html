@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<H3 class="center-align">Register</h3>
 <div class="row">
-    <div class="card">
-    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
-        <div class="card-action light-green lighten-3 white-text"><h3 class="center-align">Register</h3></div>
-        <div class="card-content brown lighten-5">
+    <div class="col s12 m6 offset-m3">
+        <div class="card large brown lighten-5">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="responsive-img activator" src="{{ url_for('static', filename='images/flags.jpg') }}">
+            </div>
+            <div class="card-content activator brown lighten-5">
+                <span class="card-title activator">Click to Register<i class="material-icons right">more_vert</i></span>
+            </div>
+                <div class="card-reveal brown lighten-5">
+                    <form method="POST" action="{{ url_for('register') }}">
+
+                        <span class="card-title">Register<i class="material-icons right">close</i></span>
             <!--username  -->
             <div class="row">
                 <div class="input-field col s12  grey-text text-darken-4 center-align">
@@ -36,6 +44,8 @@
             </div>
         </div>
     </form>
+    </div>
+</div>
     </div>
 </div>
 <!--Log in button-->

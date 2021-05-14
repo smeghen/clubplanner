@@ -5,7 +5,7 @@
     
     <H1 class="grey-text text-darken-4 center-align">Profile Page</H1>
 
-    <h3 class="grey-text text-darken-4 center-align">Here are Events you created {{ user.username }} </h3>
+    <h3 class="grey-text text-darken-4 center-align">Here are Events you created {{ user.username.capitalize() }} </h3>
     
     {% for event in events %}
         
