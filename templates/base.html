@@ -52,10 +52,7 @@
     </header>
 
     <main class="conatiner"></main>
-
-    {% block content %}
-    {% endblock %}
-
+    
     <section>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -67,6 +64,10 @@
             {% endif %}
         {% endwith %}
     </section>
+    
+    {% block content %}
+    {% endblock %}
+
 
     </main>
 
