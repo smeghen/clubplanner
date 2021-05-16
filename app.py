@@ -98,7 +98,9 @@ def logout():
 
 @app.route("/add_event")
 def add_event():
-    return render_template("add_event.html")
+    facilities = mongo.db.facilities.find().sort("facility_name", 1)
+    groups = mongo.db.groups.find()
+    return render_template("add_event.html", facilities=facilities, groups=groups)
 
 
 if __name__ == "__main__":

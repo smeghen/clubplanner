@@ -24,21 +24,25 @@
                     <!--Pick Facility-->
                     <div class="row">
                         <div class="input-field col s12 m10">
-                            <select>
+                            <select id="facility_name" name="facility_name" class="validate" required>
                                 <option value="" disabled selected>Select Facility</option>
-                                <option value="1">Option 1</option>
+                                {% for facility in facilities %}
+                                    <option value="{{ facility.facility_name }}">{{ facility.facility_name }}</option>
+                                {% endfor %}
                             </select>
-                                <label>Select Facility</label>
+                                <label for="facility_name">Select Facility</label>
                         </div>
                     </div>
                     <!--Pick group-->
                     <div class="row">
                         <div class="input-field col s12 m10">
-                            <select>
+                            <select id="group_name" name="group_name" class="validate" required>
                                 <option value="" disabled selected>Select Group</option>
-                                <option value="1">Option 1</option>
+                                {% for group in groups %}
+                                    <option value="{{ group.group_name }}">{{ group.group_name }}</option>
+                                {% endfor %}
                             </select>
-                                <label>Select Group</label>
+                                <label id="group_name">Select Group</label>
                         </div>
                     </div>
                     <!--Date Picker-->
