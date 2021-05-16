@@ -3,7 +3,7 @@
 
     <H3 class="center-align">Create Event</h3>
         <div class="row">
-        <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="">
+        <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="{{ url_for('add_event') }}">
             
                 <!--Event Name-->
                     <div class="row">
@@ -16,7 +16,7 @@
                     <!--Event Description-->
                     <div class="row">
                         <div class="input-field col s12 m10">
-                            <textarea id="event_description" name="event_description" maxlength="5"
+                            <textarea id="event_description" name="event_description" minlength="5"
                             maxlength="200" class="materialize-textarea validate" required></textarea>
                             <label for="event_description">Event Description</label>
                         </div>
@@ -61,7 +61,7 @@
                             <label for="event_time">Event Time</label>
                         </div>
                     </div>
-                            <!--Submit-->
+                            <!--Submit button-->
                     <div class="row">
                         <p class="center-align">
                              <button type="submit" class="waves-effect waves-light red lighten-2 btn">Submit</button>

@@ -96,8 +96,21 @@ def logout():
     return redirect(url_for("events"))
 
 
-@app.route("/add_event")
+@app.route("/add_event", methods=["GET", "POST"])
 def add_event():
+    if request.method == "POST":
+        event = {
+            "event_name": request.form.get("event_name"),
+            "facility_name": request.form.get("facility_name"),
+            "event_description": request.form.get("event_decription"),
+            "event_date": request.form.get("event_date"),
+            "event_time": request.form.get("event_time"),
+            "group_name": request.form.get("group_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.events.insert_one(event)
+        flash("Task Successfully Added")
+        return redirect(url_for("get_events"))
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
     return render_template("add_event.html", facilities=facilities, groups=groups)
