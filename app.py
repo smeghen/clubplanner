@@ -99,10 +99,22 @@ def logout():
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
     if request.method == "POST":
+        # check if Facility is already booked for Date and time
+        date = request.form.get("event_date")
+        time = request.form.get("event_time")
+        venue = request.form.get("facility_name")
+        if mongo.db.events.find_one(
+                {"event_date": date,
+                "event_time": time,
+                "facility_name": venue}
+            ):
+            flash("Facility already booked!")
+            return redirect(url_for("add_event"))
+
         event = {
             "event_name": request.form.get("event_name"),
             "facility_name": request.form.get("facility_name"),
-            "event_description": request.form.get("event_decription"),
+            "event_description": request.form.get("event_description"),
             "event_date": request.form.get("event_date"),
             "event_time": request.form.get("event_time"),
             "group_name": request.form.get("group_name"),
