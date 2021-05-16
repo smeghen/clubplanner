@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <H3 class="center-align">Create Event</h3>
+        <div class="row">
+        <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="">
+            
+                <!--Event Name-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <input id="event_name" name="event_name" minlength="5"
+                            maxlength="50" type="text" class="validate" required>
+                            <label for="event_name">Event Name</label>
+                        </div>
+                    </div>
+                    <!--Event Description-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <textarea id="event_description" name="event_description" maxlength="5"
+                            maxlength="200" class="materialize-textarea validate" required></textarea>
+                            <label for="event_description">Event Description</label>
+                        </div>
+                    </div>
+                    <!--Pick Facility-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <select>
+                                <option value="" disabled selected>Select Facility</option>
+                                <option value="1">Option 1</option>
+                            </select>
+                                <label>Select Facility</label>
+                        </div>
+                    </div>
+                    <!--Pick group-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <select>
+                                <option value="" disabled selected>Select Group</option>
+                                <option value="1">Option 1</option>
+                            </select>
+                                <label>Select Group</label>
+                        </div>
+                    </div>
+                    <!--Date Picker-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <input id="event_date" name="event_date" 
+                           type="text" class="validate datepicker" required>
+                            <label for="event_date">Event Date</label>
+                        </div>
+                    </div>
+                    <!--Time Picker-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <input id="event_time" name="event_time" 
+                           type="text" class="validate timepicker" required>
+                            <label for="event_time">Event Time</label>
+                        </div>
+                    </div>
+                            <!--Submit-->
+                    <div class="row">
+                        <p class="center-align">
+                             <button type="submit" class="waves-effect waves-light red lighten-2 btn">Submit</button>
+                        </p>
+                    </div>
+                
+                </form>
+        
+        </div>
+    
+
+
+
+
+
+{% endblock %}

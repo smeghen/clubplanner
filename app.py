@@ -93,7 +93,12 @@ def logout():
     # remove user from session cookie
     flash("Successfully logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("events"))
+
+
+@app.route("/add_event")
+def add_event():
+    return render_template("add_event.html")
 
 
 if __name__ == "__main__":
