@@ -142,7 +142,7 @@ def edit_event(event_id):
                 "facility_name": venue}
             ):
             flash("Facility already booked!")
-            return redirect(url_for("get_events"))
+            return redirect(url_for('profile', username=session["user"]))
 
         submit = {
             "event_name": request.form.get("event_name"),
@@ -161,6 +161,13 @@ def edit_event(event_id):
     groups = mongo.db.groups.find()
     return render_template(
         "edit_event.html", event=event, facilities=facilities, groups=groups)
+
+
+@app.route("/delete_event/<event_id>")
+def delete_event(event_id):
+    mongo.db.event.remove({"_id": ObjectId(event_id)})
+    flash("Event Successfully Deleted")
+    return redirect(url_for('profile', username=session["user"]))
 
 
 if __name__ == "__main__":

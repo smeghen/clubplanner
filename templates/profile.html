@@ -29,7 +29,7 @@
                         <div class="row">
                             <p class="center-align">
                                 <a href="{{ url_for('edit_event', event_id=event._id) }}" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
-                                <a href="#" class="waves-effect waves-light red lighten-2 btn">Delete</a>
+                                <a href="{{ url_for('delete_event', event_id=event._id) }}" class="waves-effect waves-light red lighten-2 btn">Delete</a>
                             </p>
                         </div>
                     </div>
