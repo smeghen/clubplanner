@@ -3,13 +3,13 @@
 
     <H3 class="center-align">Edit Event</h3>
         <div class="row">
-        <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="{{ url_for('edit_event', event_id=event._id) }}">
+            <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="{{ url_for('edit_event', event_id=event._id) }}">
             
                 <!--Event Name-->
                     <div class="row">
                         <div class="input-field col s12 m10">
                             <input id="event_name" name="event_name" minlength="5"
-                            maxlength="50" type="text" class="validate" required>
+                            value="{{ event.event_name }}" maxlength="50" type="text" class="validate" required>
                             <label for="event_name">Event Name</label>
                         </div>
                     </div>
@@ -17,7 +17,9 @@
                     <div class="row">
                         <div class="input-field col s12 m10">
                             <textarea id="event_description" name="event_description" minlength="5"
-                            maxlength="200" class="materialize-textarea validate" required></textarea>
+                            maxlength="200" class="materialize-textarea validate" required>
+                                {{- event.event_description -}}
+                            </textarea>
                             <label for="event_description">Event Description</label>
                         </div>
                     </div>
@@ -25,9 +27,13 @@
                     <div class="row">
                         <div class="input-field col s12 m10">
                             <select id="facility_name" name="facility_name" class="validate" required>
-                                <option value="" disabled selected>Select Facility</option>
+                                <option value="" selected>Select Facility</option>
                                 {% for facility in facilities %}
-                                    <option value="{{ facility.facility_name }}">{{ facility.facility_name }}</option>
+                                    {% if facility.facility_name == event.facility_name %}
+                                        <option value="{{ facility.facility_name }}" selected>{{ facility.facility_name }}</option>
+                                    {% else %}
+                                        <option value="{{ facility.facility_name }}">{{ facility.facility_name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                                 <label for="facility_name">Select Facility</label>
@@ -37,9 +43,13 @@
                     <div class="row">
                         <div class="input-field col s12 m10">
                             <select id="group_name" name="group_name" class="validate" required>
-                                <option value="" disabled selected>Select Group</option>
+                                <option value="" selected>Select Group</option>
                                 {% for group in groups %}
-                                    <option value="{{ group.group_name }}">{{ group.group_name }}</option>
+                                    {% if group.group_name == event.group_name %}
+                                        <option value="{{ group.group_name }}" selected>{{ group.group_name }}</option>
+                                    {% else %}
+                                        <option value="{{ group.group_name }}">{{ group.group_name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                                 <label id="group_name">Select Group</label>
@@ -48,7 +58,7 @@
                     <!--Date Picker-->
                     <div class="row">
                         <div class="input-field col s12 m10">
-                            <input id="event_date" name="event_date" 
+                            <input id="event_date" name="event_date" value="{{ event.event_date }}" 
                            type="text" class="validate datepicker" required>
                             <label for="event_date">Event Date</label>
                         </div>
@@ -56,7 +66,7 @@
                     <!--Time Picker-->
                     <div class="row">
                         <div class="input-field col s12 m10">
-                            <input id="event_time" name="event_time" 
+                            <input id="event_time" name="event_time" value="{{ event.event_time }}"
                            type="text" class="validate timepicker" required>
                             <label for="event_time">Event Time</label>
                         </div>
@@ -64,12 +74,12 @@
                             <!--Submit button-->
                     <div class="row">
                         <p class="center-align">
-                             <button type="submit" class="waves-effect waves-light red lighten-2 btn">Confirm Edit</button>
+                             <button type="submit" class="waves-effect waves-light blue lighten-3 btn">Confirm Edit</button>
+                             <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light red lighten-2 btn">Cancel</a>
                         </p>
                     </div>
                 
-                </form>
-        
+            </form>  
         </div>
     
 

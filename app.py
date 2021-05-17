@@ -125,15 +125,42 @@ def add_event():
         return redirect(url_for("get_events"))
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
-    return render_template("add_event.html", facilities=facilities, groups=groups)
+    return render_template(
+        "add_event.html", facilities=facilities, groups=groups)
 
 
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
+    if request.method == "POST":
+        # check if Facility is already booked for Date and time
+        date = request.form.get("event_date")
+        time = request.form.get("event_time")
+        venue = request.form.get("facility_name")
+        if mongo.db.events.find_one(
+                {"event_date": date,
+                "event_time": time,
+                "facility_name": venue}
+            ):
+            flash("Facility already booked!")
+            return redirect(url_for("get_events"))
+
+        submit = {
+            "event_name": request.form.get("event_name"),
+            "facility_name": request.form.get("facility_name"),
+            "event_description": request.form.get("event_description"),
+            "event_date": request.form.get("event_date"),
+            "event_time": request.form.get("event_time"),
+            "group_name": request.form.get("group_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
+        flash("Task Successfully Updated")
+            
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
-    return render_template("edit_event.html", event=event, facilities=facilities, groups=groups)
+    return render_template(
+        "edit_event.html", event=event, facilities=facilities, groups=groups)
 
 
 if __name__ == "__main__":
