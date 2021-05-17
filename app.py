@@ -128,6 +128,14 @@ def add_event():
     return render_template("add_event.html", facilities=facilities, groups=groups)
 
 
+@app.route("/edit_event/<event_id>", methods=["GET", "POST"])
+def edit_event(event_id):
+    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+    facilities = mongo.db.facilities.find().sort("facility_name", 1)
+    groups = mongo.db.groups.find()
+    return render_template("edit_event.html", event=event, facilities=facilities, groups=groups)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
