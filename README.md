@@ -314,10 +314,17 @@ Once the project has been loaded, run the command
 
 
 ---
-# Issues Encountered
+# Issues Encountered 
+
+* Getting the Create Event function to check the database for existing Events that had the same parameters of Date, Time and Facility proved tricky for me. But, with a bit of time 
+and Slack research I came to understand the concepts that were required. What was throwing me was how to put each of the parameters into the search of the database. Once I understood 
+that declaring the variables of date, time and venue from the input form, and then passing them into the search of the database, it all fell into place for me. 
 
 
 # Credits
+
+* The Task Manager Miniproject by Code Institute was used as an excellent starting point for this project. Much of the structure of the project was based around this and was adapted
+, modified and expanded to suit the functionality of the porject.
 
 * css styling for getting buttons centered in Materialize Parallax found on https://codepen.io/j_holtslander/pen/NoKqQP 
 
@@ -325,7 +332,7 @@ Once the project has been loaded, run the command
 
 # Acknowledgments
 
-* My Mentor, , for his feedback and support throughout the project.
+* My Mentor, Precious Ijege , for his feedback and support throughout the project.
 
 * The Slack community for their support, encouragement and assistance in finding answers 
 to my project problems.
