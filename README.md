@@ -121,41 +121,41 @@ for the site. These were created using Balsamiq.
 
 ##### Home Page
 
-![Wireframe mockup](assets/images/wireframes/HomePage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/HomePage.png "Wireframe mockup")
 
 ##### Log In Page
 
-![Wireframe mockup](assets/images/wireframes/LogInPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/LogInPage.png "Wireframe mockup")
 
 ##### Register Page
 
-![Wireframe mockup](assets/images/wireframes/RegisterPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/RegisterPage.png "Wireframe mockup")
 
 ##### Profile Page
 
-![Wireframe mockup](assets/images/wireframes/ProfilePage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/ProfilePage.png "Wireframe mockup")
 
 ##### Edit Profile Page
 
-![Wireframe mockup](assets/images/wireframes/EditProfilePage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/EditProfilePage.png "Wireframe mockup")
 
 ##### Create Event Page
 
-![Wireframe mockup](assets/images/wireframes/CreateEventPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/CreateEventPage.png "Wireframe mockup")
 
 ##### Edit/Delete Event Page
 
-![Wireframe mockup](assets/images/wireframes/EditDeleteEventPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/EditDeleteEvent.png "Wireframe mockup")
 
 ##### Edit Event Page
 
-![Wireframe mockup](assets/images/wireframes/EditEventPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/EditEventPage.png "Wireframe mockup")
 
 ##### Delete Event Page
 
-![Wireframe mockup](assets/images/wireframes/DeleteEventPage.png "Wireframe mockup")
+![Wireframe mockup](static/images/wireframes/DeleteEventPage.png "Wireframe mockup")
 
- For the pfd version of the wireframes click [here.](https://github.com/smeghen/clubplanner/blob/master/assets/images/wireframes/MS3Wireframes.pdf)
+ For the pfd version of the wireframes click [here.](https://github.com/smeghen/clubplanner/blob/master/static/images/wireframes/MS3Wireframes.pdf)
  
 
 ### Differences to Design
