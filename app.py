@@ -28,12 +28,12 @@ def get_events():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #Check if username already exists on DB
+        # Check if username already exists on DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+  
         if existing_user:
-            flash ("This Username already Exists")
+            flash("This Username already Exists")
             return redirect(url_for("register"))
 
         register = {
@@ -51,12 +51,12 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #Check if username already exists on DB
+        # Check if username already exists on DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         
         if existing_user:
-            #Check password matches DB
+            # Check password matches DB
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -107,7 +107,7 @@ def add_event():
                 {"event_date": date,
                 "event_time": time,
                 "facility_name": venue}
-            ):
+                ):
             flash("Facility already booked!")
             return redirect(url_for("add_event"))
 

@@ -29,8 +29,23 @@
                         <div class="row">
                             <p class="center-align">
                                 <a href="{{ url_for('edit_event', event_id=event._id) }}" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
-                                <a href="{{ url_for('delete_event', event_id=event._id) }}" class="waves-effect waves-light red lighten-2 btn">Delete</a>
+                                <a href="#delete-modal-{{event._id}}" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
                             </p>
+                        </div>
+                        <!-- Modal Structure -->
+                        <div id="delete-modal-{{event._id}}" class="modal center-align">
+                            <div class="modal-content brown lighten-3 center-align">
+                                <h4>Warning</h4>
+                                <p>Are you sure you want to delete the this event?</p>
+                            
+                            
+                                <p class="center-align">
+                                <a href="{{ url_for('delete_event', event_id=event._id) }}"
+                                    class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
+                                <a href="{{ url_for('profile', username=session['user']) }}"
+                                    class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
+                                    </p>
+                            </div>
                         </div>
                     </div>
                 </div>
