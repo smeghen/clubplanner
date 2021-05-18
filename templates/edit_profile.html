@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <H3 class="center-align">Edit Profile</h3>
+        <div class="row">
+            <form class="col s12 m6 offset-m3 brown lighten-5" method="POST" action="{{ url_for('edit_profile', username=session['user']) }}">
+
+                    <!--Pick group-->
+                    <div class="row">
+                        <div class="input-field col s12 m10">
+                            <select id="group_name" name="group_name" class="validate" required>
+                                <option value="" selected>Select Group</option>
+                                {% for group in groups %}
+                                    {% if group.group_name == user.group_name %}
+                                        <option value="{{ group.group_name }}" selected>{{ group.group_name }}</option>
+                                    {% else %}
+                                        <option value="{{ group.group_name }}">{{ group.group_name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                                <label id="group_name">Select Group</label>
+                        </div>
+                    </div>
+
+                            <!--Submit button-->
+                    <div class="row">
+                        <p class="center-align">
+                             <button type="submit" class="waves-effect waves-light blue lighten-3 btn">Confirm Edit</button>
+                             <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light red lighten-2 btn">Cancel</a>
+                        </p>
+                    </div>
+                
+            </form>  
+        </div>
+    
+
+
+
+
+
+{% endblock %}
