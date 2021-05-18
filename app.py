@@ -165,7 +165,7 @@ def edit_event(event_id):
 
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
-    mongo.db.event.remove({"_id": ObjectId(event_id)})
+    mongo.db.events.remove({"_id": ObjectId(event_id)})
     flash("Event Successfully Deleted")
     return redirect(url_for('profile', username=session["user"]))
 

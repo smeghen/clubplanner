@@ -120,7 +120,7 @@ Here is the wireframes that I used as the basis of the design
 for the site. These were created using Balsamiq.
 
 
-![Wireframe mockup](assets/images/wireframe.png "Wireframe mockup")
+![Wireframe mockup](assets/images/wireframe/HomePage.png "Wireframe mockup")
 
  For the pfd version of the wireframes click [here.](https://github.com/smeghen/mathstables/blob/master/assets/images/wireframe.pdf)
  
