@@ -7,39 +7,34 @@
 
     <h3 class="grey-text text-darken-4 center-align">Here are Events you created {{ user.username.capitalize() }} </h3>
     
-    {% for event in events %}
+    {% for user in users %}
         
         <div class="row">    
             <div class="container">
                 <div class="card brown lighten-5 center-align hoverable col s12 m4">
                     <div class="card-title grey-text text-darken-4 center-align">
                         <span class="grey-text text-align-center text-darken-4">
-                            <strong>{{ event.group_name }}</strong><br>
+                            <strong>{{ user.username }}</strong><br>
                         </span>
         
                         <div class="card-content">
                             <span class="grey-text text-align-center text-darken-4 center-align">
-                                {{ event.event_name}}<br>
-                                {{ event.facility_name }}<br>
-                                {{ event.event_date }}<br>
-                                {{ event.event_time }}<br>
-                                {{ event.event_description }}<br>
-                                <br>
+                                {{ user.group_name }}<br>
                             </span>
                         </div>
                         <div class="row">
                             <p class="center-align">
-                                <a href="{{ url_for('edit_event', event_id=event._id) }}" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
-                                <a href="#delete-modal-{{event._id}}" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
+                                <a href="#" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
+                                <a href="#" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
                             </p>
                         </div>
                         <!-- Delete Modal -->
-                        <div id="delete-modal-{{event._id}}" class="modal center-align">
+                        <div id="" class="modal center-align">
                             <div class="modal-content brown lighten-3 center-align">
                                 <h4>Warning</h4>
                                 <p>Are you sure you want to delete the this event?</p>
                                 <p class="center-align">
-                                    <a href="{{ url_for('delete_event', event_id=event._id) }}"
+                                    <a href="#"
                                         class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
                                     <a href="{{ url_for('profile', username=session['user']) }}"
                                         class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>

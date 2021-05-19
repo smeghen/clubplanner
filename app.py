@@ -81,11 +81,12 @@ def login():
 def profile(username):
     # grab the session user's username from db
     user = mongo.db.users.find_one({"username": username.lower()})
-    events = mongo.db.events.find({"created_by": username.lower()})
+    users = mongo.db.users.find({"username": username.lower()})
+    
 
     if "user" in session:    
         return render_template(
-            "profile.html", user=user, events=events)
+            "profile.html", user=user, users=users)
 
     return redirect(url_for(login))
 
