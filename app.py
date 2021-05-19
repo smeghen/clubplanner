@@ -31,21 +31,23 @@ def register():
         # Check if username already exists on DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-  
+
         if existing_user:
             flash("This Username already Exists")
             return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
+            "password": generate_password_hash(request.form.get("password")),
+            "group_name": request.form.get("group_name")
+            }
         mongo.db.users.insert_one(register)
-
         session["user"] = request.form.get("username").lower()
         flash("Congratulations you are now Registered")
-        return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html")
+        return redirect(url_for(
+            "profile", username=session["user"]))
+    groups = mongo.db.groups.find()
+    return render_template("register.html", groups=groups)
 
 
 @app.route("/login", methods=["GET", "POST"])

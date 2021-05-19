@@ -9,13 +9,9 @@
                     <div class="row">
                         <div class="input-field col s12 m10">
                             <select id="group_name" name="group_name" class="validate" required>
-                                <option value="" selected>Select Group</option>
+                                <option value="" disabled selected>Select Group</option>
                                 {% for group in groups %}
-                                    {% if group.group_name == user.group_name %}
-                                        <option value="{{ group.group_name }}" selected>{{ group.group_name }}</option>
-                                    {% else %}
-                                        <option value="{{ group.group_name }}">{{ group.group_name }}</option>
-                                    {% endif %}
+                                    <option value="{{ group.group_name }}">{{ group.group_name }}</option>
                                 {% endfor %}
                             </select>
                                 <label id="group_name">Select Group</label>
