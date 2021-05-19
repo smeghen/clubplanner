@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    
+    <H1 class="grey-text text-darken-4 center-align">Manage Events</H1>
+
+    <h3 class="grey-text text-darken-4 center-align">Events you created {{ user.username.capitalize() }} </h3>
+    
+    {% for event in events %}
+        
+        <div class="row">    
+            <div class="container">
+                <div class="card brown lighten-5 center-align hoverable col s12 m4">
+                    <div class="card-title grey-text text-darken-4 center-align">
+                        <span class="grey-text text-align-center text-darken-4">
+                            <strong>{{ event.group_name }}</strong><br>
+                        </span>
+        
+                        <div class="card-content">
+                            <span class="grey-text text-align-center text-darken-4 center-align">
+                                {{ event.event_name}}<br>
+                                {{ event.facility_name }}<br>
+                                {{ event.event_date }}<br>
+                                {{ event.event_time }}<br>
+                                {{ event.event_description }}<br>
+                                <br>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <p class="center-align">
+                                <a href="{{ url_for('edit_event', event_id=event._id) }}" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
+                                <a href="#delete-modal-{{event._id}}" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
+                            </p>
+                        </div>
+                        <!-- Delete Modal -->
+                        <div id="delete-modal-{{event._id}}" class="modal center-align">
+                            <div class="modal-content brown lighten-3 center-align">
+                                <h4>Warning</h4>
+                                <p>Are you sure you want to delete the this event?</p>
+                                <p class="center-align">
+                                    <a href="{{ url_for('delete_event', event_id=event._id) }}"
+                                        class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
+                                    <a href="{{ url_for('profile', username=session['user']) }}"
+                                        class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+   {% endfor %}
+
+
+
+{% endblock %}

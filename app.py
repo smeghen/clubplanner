@@ -98,6 +98,19 @@ def logout():
     return redirect(url_for("get_events"))
 
 
+@app.route("/manage/<username>", methods=["GET", "POST"])
+def manage(username):
+    # grab the session user's username from db
+    user = mongo.db.users.find_one({"username": username.lower()})
+    events = mongo.db.events.find({"created_by": username.lower()})
+
+    if "user" in session:    
+        return render_template(
+            "manage.html", user=user, events=events)
+
+    return redirect(url_for(login))
+
+
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
     if request.method == "POST":
