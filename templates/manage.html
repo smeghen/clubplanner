@@ -17,7 +17,14 @@
                         <span class="grey-text text-align-center text-darken-4">
                             <strong>{{ event.group_name }}</strong><br>
                         </span>
-        
+                        {% if event.facility_name|lower() == "main pitch" %}
+                        <i class="material-icons prefix">sports_volleyball</i>
+                        {% elif event.facility_name|lower() == "club house" %}
+                        <i class="material-icons prefix">other_houses</i>
+                        {% elif event.facility_name|lower() == "training pitch"%}
+                        <i class="material-icons prefix">directions_run</i>
+                        {% endif %}
+
                         <div class="card-content">
                             <span class="grey-text text-align-center text-darken-4 center-align">
                                 {{ event.event_name}}<br>
