@@ -7,11 +7,12 @@
 
     <h3 class="grey-text text-darken-4 center-align">Events you created {{ user.username.capitalize() }} </h3>
     
-    {% for event in events %}
+    
         
         <div class="row">    
+    {% for event in events %}
             <div class="container">
-                <div class="card brown lighten-5 center-align hoverable col s12 m4">
+                <div class="card brown lighten-5 center-align hoverable col s12 m3 offset-m2">
                     <div class="card-title grey-text text-darken-4 center-align">
                         <span class="grey-text text-align-center text-darken-4">
                             <strong>{{ event.group_name }}</strong><br>
@@ -48,10 +49,11 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
+            {% endfor %} 
         </div>
         
-   {% endfor %}
+  
 
 
 
