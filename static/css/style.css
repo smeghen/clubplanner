@@ -8,11 +8,12 @@ body {
     color: white;
 }
 
-/* Home Page */ 
+/* Home Page  
 .card{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
+*/
 
 
 /* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
