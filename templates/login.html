@@ -1,62 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
+    <section id="login">
+        <H3 class="center-align login">Log In</h3>
+            
+        <div class="row z-depth-5">
+           
+            
+            <form method="POST" class="col s12 brown lighten-5" action="{{ url_for('login') }}">
 
-<H3 class="center-align">Log In</h3>
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-        <div class="card large brown lighten-5">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="responsive-img activator" src="{{ url_for('static', filename='images/pitch.jpg') }}">
-            </div>
-            <div class="card-content activator brown lighten-5">
-                <span class="card-title activator">Click to Enter Details<i class="material-icons right">more_vert</i></span>
-            </div>
-                <div class="card-reveal brown lighten-5">
-                    <form method="POST" action="{{ url_for('login') }}">
-
-
-                        <span class="card-title">Log In<i class="material-icons right">close</i></span>
-                        <!--username  -->
-                        <div class="row">
-                            <div class="input-field col s12  grey-text text-darken-4 center-align">
-                                <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                                <label for="username">Username</label>
-                                <span class="helper-text"
-                                    data-error="Username must be at least 5 characters and can contain numbers"
-                                    data-success="Accepted"></span>
-                            </div>
-                        </div>
-                        <!--password-->
-                        <div class="row">
-                            <div class="input-field col s12 grey-text text-darken-4 center-align">
-                                <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                                <label for="password">Password</label>
-                                <span class="helper-text" data-error="Password must be at between 5 and 15 characters"
-                                    data-success="Accepted"></span>
-                            </div>
-                        </div>
-                        <!--Log In button-->
-                        <div class="row">
-                            <p class="center-align">
-                                <button type="submit" class="waves-effect waves-light red lighten-2 btn">Log In</button>
-                            </p>
-                        </div>
-                    </form>
+                <!--username  -->
+                <div class="row">
+                    
+                    <div class="input-field col s12  grey-text text-darken-4 center-align">
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                        <span class="helper-text" data-error="Username must be at least 5 characters and can contain numbers"
+                            data-success="Accepted"></span>
+                    </div>
+                
+                <!--password-->
+                
+                    <div class="input-field col s12 grey-text text-darken-4 center-align">
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                        <span class="helper-text" data-error="Password must be at between 5 and 15 characters"
+                            data-success="Accepted"></span>
+                    </div>
                 </div>
+
+                <!--Log In button-->
+                <div class="row">
+                    <p class="center-align">
+                        <button type="submit" class="waves-effect waves-light red lighten-2 btn">Log In</button>
+                    </p>
+                </div>
+            </form>
+            
+        </div>
+                    
+
+
+        <div class="row">
+            <!--Register Button-->
+            <h6 class="center-align login">Not Registered Yet?</h6>
+            <div class="row">
+                <p class="center-align">
+                    <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn">Register</a>
+                </p>
             </div>
         </div>
-    </div>
-
-
-<!--Register Button-->
-<h6 class="center-align">Not Registered Yet?</h6>
-<div class="row">
-    <p class="center-align">
-        <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn">Register</a>
-    </p>
-</div>
+</section>
 
 
 
