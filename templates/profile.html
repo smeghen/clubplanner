@@ -5,7 +5,7 @@
     
     <H1 class="grey-text text-darken-4 center-align">Profile Page</H1>
 
-    <h3 class="grey-text text-darken-4 center-align">Here are Events you created {{ user.username.capitalize() }} </h3>
+    <h3 class="grey-text text-darken-4 center-align">{{ user.username.capitalize() }} this is your current Profile </h3>
     
     {% for user in users %}
         
@@ -14,32 +14,22 @@
                 <div class="card brown lighten-5 center-align hoverable col s12 m6 offset-m3">
                     <div class="card-title grey-text text-darken-4 center-align">
                         <span class="grey-text text-align-center text-darken-4">
-                            <strong>{{ user.username }}</strong><br>
+                            <strong>Username:</strong>  {{ user.username.capitalize() }}<br>
                         </span>
         
                         <div class="card-content">
                             <span class="grey-text text-align-center text-darken-4 center-align">
+                                <p class="centre-align">
+                                    <strong>Groups that you are currently watching:</strong>
+                                </p>
                                 {{ user.group_name }}<br>
                             </span>
                         </div>
                         <div class="row">
                             <p class="center-align">
-                                <a href="#" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
-                                <a href="#" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
+                                <a href="#" class="waves-effect waves-light red lighten-2 btn modal-trigger">Update Profile</a>
+
                             </p>
-                        </div>
-                        <!-- Delete Modal -->
-                        <div id="" class="modal center-align">
-                            <div class="modal-content brown lighten-3 center-align">
-                                <h4>Warning</h4>
-                                <p>Are you sure you want to delete the this event?</p>
-                                <p class="center-align">
-                                    <a href="#"
-                                        class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
-                                    <a href="{{ url_for('profile', username=session['user']) }}"
-                                        class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
