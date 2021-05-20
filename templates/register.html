@@ -11,6 +11,7 @@
                 <div class="row">
                     
                     <div class="input-field col s12  grey-text text-darken-4 center-align">
+                        <i class="material-icons prefix">account_circle</i>
                         <input id="username" name="username" type="text" minlength="5" maxlength="15"
                             pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
@@ -21,6 +22,7 @@
                 <!--password-->
                 
                     <div class="input-field col s12 grey-text text-darken-4 center-align">
+                        <i class="material-icons prefix">lock</i>
                         <input id="password" name="password" type="password" minlength="5" maxlength="15"
                             pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
@@ -33,6 +35,7 @@
                      <!--Pick group-->
                     <div class="row">
                         <div class="input-field col s12">
+                        <i class="material-icons prefix">group_add</i>
                             <select id="group_name" name="group_name" class="validate" required>
                                 <option value="" disabled selected>Select Group</option>
                                 {% for group in groups %}
