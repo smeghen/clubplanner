@@ -8,6 +8,7 @@
                 <!--Event Name-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">create</i>
                             <input id="event_name" name="event_name" minlength="5"
                             maxlength="50" type="text" class="validate" required>
                             <label for="event_name">Event Name</label>
@@ -16,6 +17,7 @@
                     <!--Event Description-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">description</i>
                             <textarea id="event_description" name="event_description" minlength="5"
                             maxlength="200" class="materialize-textarea validate" required></textarea>
                             <label for="event_description">Event Description</label>
@@ -24,6 +26,7 @@
                     <!--Pick Facility-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">place</i>
                             <select id="facility_name" name="facility_name" class="validate" required>
                                 <option value="" disabled selected>Select Facility</option>
                                 {% for facility in facilities %}
@@ -36,6 +39,7 @@
                     <!--Pick group-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">group_add</i>
                             <select id="group_name" name="group_name" class="validate" required>
                                 <option value="" disabled selected>Select Group</option>
                                 {% for group in groups %}
@@ -48,6 +52,7 @@
                     <!--Date Picker-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">event</i>
                             <input id="event_date" name="event_date" 
                            type="text" class="validate datepicker" required>
                             <label for="event_date">Event Date</label>
@@ -56,6 +61,7 @@
                     <!--Time Picker-->
                     <div class="row">
                         <div class="input-field col s12 m10">
+                        <i class="material-icons prefix">schedule</i>
                             <input id="event_time" name="event_time" 
                            type="text" class="validate timepicker" required>
                             <label for="event_time">Event Time</label>
