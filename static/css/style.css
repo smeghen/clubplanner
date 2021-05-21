@@ -36,7 +36,7 @@ body {
    
     flex-direction: column;
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/flags.jpg") center center no-repeat;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/flags.jpg") center center no-repeat;
     background-size: cover;
 }
 
@@ -52,6 +52,20 @@ body {
    
     flex-direction: column;
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/pitch.jpg") center center no-repeat;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch.jpg") center center no-repeat;
     background-size: cover;
+}
+
+.form{
+    background: rgba(84, 85, 59, 0.541);
+    
+}
+
+.form i{
+    color: white;
+}
+
+input{
+    color: white !important;
+    font-size: 25px !important;
 }
