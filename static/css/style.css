@@ -8,12 +8,10 @@ body {
     color: white;
 }
 
-/* Home Page  
-.card{
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
+.brand-logo{
+    margin-left: 10px;
+    font-size: 1.5rem !important;
 }
-*/
 
 
 /* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
