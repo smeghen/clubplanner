@@ -13,6 +13,14 @@ body {
     font-size: 1.5rem !important;
 }
 
+.title{
+    font-size: 4rem;
+}
+
+.info-text{
+    font-size: 2rem;
+}
+
 
 /* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
 .parallax-container 
