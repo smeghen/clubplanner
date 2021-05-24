@@ -92,6 +92,8 @@ def profile(username):
     return redirect(url_for(login))
 
 
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -139,7 +141,7 @@ def add_event():
         }
         mongo.db.events.insert_one(event)
         flash("Task Successfully Added")
-        return redirect(url_for("get_events"))
+        return redirect(url_for("add_event"))
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
     return render_template(
@@ -159,7 +161,7 @@ def edit_event(event_id):
                 "facility_name": venue}
             ):
             flash("Facility already booked!")
-            return redirect(url_for('profile', username=session["user"]))
+            return redirect(url_for('manage.html', username=session["user"]))
 
         submit = {
             "event_name": request.form.get("event_name"),
