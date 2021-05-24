@@ -8,6 +8,7 @@ $(document).ready(function () {
     $('select').formSelect();
      $('.modal').modal();
     $('.datepicker').datepicker({
+        setDefaultDate: true,
         format: "dd mmmm yyyy",
         yearRange: 2,
         showClearBtn: true,
@@ -16,6 +17,7 @@ $(document).ready(function () {
         }
     });
     $('.timepicker').timepicker({
+        autoClose: true,
         duration: 60,
         twelveHour: false,
         defaultTime: '12:00',

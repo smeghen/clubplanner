@@ -72,12 +72,12 @@ body {
 }
 
 input{
-    color: white !important;
+    color: white;
     font-size: 25px !important;
 }
 
 textarea{
-    color: white !important;
+    color: white;
     font-size: 25px !important;   
 }
 
@@ -115,4 +115,9 @@ textarea{
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/postit.jpg") center center no-repeat;
     background-size: cover;
+}
+
+.datepicker-date-display{
+    color: black !important;
+    background-color: tranparent;
 }
