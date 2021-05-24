@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<section id="manage-event">
     
-    <H1 class="grey-text text-darken-4 center-align">Profile</H1>
+    <H1 class="login center-align">Profile</H1>
 
-    <h3 class="grey-text text-darken-4 center-align">Here are the Events you created {{ user.username.capitalize() }} </h3>
+    <h3 class="login center-align">Here are the Events you created {{ user.username.capitalize() }} </h3>
     
     
         
-        <div class="row">    
+        <div class="row z-depth-5">    
     {% for event in events %}
             <div class="container">
-                <div class="card brown lighten-5 hoverable col s12 m12 l4">
-                    <div class="card-title grey-text text-darken-4 center-align">
-                        <span class="grey-text text-align-center text-darken-4">
+                <div class="card form hoverable col s12 m3">
+                    <div class="card-title login center-align">
+                        <span class=" text-align-center login">
                             <strong>{{ event.group_name }}</strong><br>
                         </span>
                         {% if event.facility_name|lower() == "main pitch" %}
@@ -26,7 +26,7 @@
                         {% endif %}
 
                         <div class="card-content">
-                            <span class="grey-text text-align-center text-darken-4 center-align">
+                            <span class=" text-align-center login center-align">
                                 {{ event.event_name}}<br>
                                 {{ event.facility_name }}<br>
                                 {{ event.event_date }}<br>
@@ -61,7 +61,7 @@
         </div>
         
   
-
+</section>
 
 
 {% endblock %}
