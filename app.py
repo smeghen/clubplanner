@@ -22,6 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_events")
 def get_events():
+   # Sort all Created Events and display the next 3 events from todays date.  
+
     all_events = list(mongo.db.events.find())
     today_date = date.today()
     events = list()
@@ -48,11 +50,11 @@ def register():
         # Check if username already exists on DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # Error message if Username already been used
         if existing_user:
             flash("This Username already Exists")
             return redirect(url_for("register"))
-
+        
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -109,8 +111,6 @@ def profile(username):
     return redirect(url_for(login))
 
 
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -121,7 +121,7 @@ def logout():
 
 @app.route("/manage/<username>", methods=["GET", "POST"])
 def manage(username):
-    # grab the session user's username from db
+    # grab the session user's username from db and display Evnets create by them
     user = mongo.db.users.find_one({"username": username.lower()})
     events = mongo.db.events.find({"created_by": username.lower()})
 
@@ -146,7 +146,7 @@ def add_event():
                 ):
             flash("Facility already booked!")
             return redirect(url_for("add_event"))
-
+        # If facility free then details passed to db
         event = {
             "event_name": request.form.get("event_name"),
             "facility_name": request.form.get("facility_name"),
@@ -179,7 +179,7 @@ def edit_event(event_id):
             ):
             flash("Facility already booked!")
             return redirect(url_for('manage.html', username=session["user"]))
-
+        # If facility free db updated
         submit = {
             "event_name": request.form.get("event_name"),
             "facility_name": request.form.get("facility_name"),
@@ -201,6 +201,7 @@ def edit_event(event_id):
 
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
+    # Remove event from db
     mongo.db.events.remove({"_id": ObjectId(event_id)})
     flash("Event Successfully Deleted")
     return redirect(url_for('manage', username=session["user"]))
