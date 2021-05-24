@@ -371,6 +371,8 @@ on <a href="https://unsplash.com/s/photos/calendar?utm_source=unsplash&utm_mediu
 
 * css styling for getting buttons centered in Materialize Parallax found on https://codepen.io/j_holtslander/pen/NoKqQP 
 
+* Used site: https://www.programiz.com/python-programming/datetime go gain understandingof datetime, strptime and strftime functionality.
+
 ---
 
 # Acknowledgments
