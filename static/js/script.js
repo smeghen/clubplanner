@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('select').formSelect();
      $('.modal').modal();
     $('.datepicker').datepicker({
-        format: "dd mmmm, yyyy",
+        format: "dd mmmm yyyy",
         yearRange: 2,
         showClearBtn: true,
         i18n: {

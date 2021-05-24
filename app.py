@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, date
 if os.path.exists("env.py"):
     import env
 
@@ -21,7 +22,23 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_events")
 def get_events():
-    events = mongo.db.events.find()
+    all_events = list(mongo.db.events.find())
+    today_date = date.today()
+    events = list()
+
+    for event in all_events:
+        event_date = datetime.strptime(event.get(
+            'event_date'), '%d %B, %Y').date()
+        if event_date > today_date:
+            event['event_date'] = event_date
+            events.append(event)
+    events.sort(key=lambda x: x['event_date'])
+
+    events = events[:3]
+
+    for event in events:
+        event['event_date'] = datetime.strftime(
+            event.get('event_date'), '%d %B, %Y')
     return render_template("events.html", events=events)
 
 
@@ -186,7 +203,7 @@ def edit_event(event_id):
 def delete_event(event_id):
     mongo.db.events.remove({"_id": ObjectId(event_id)})
     flash("Event Successfully Deleted")
-    return redirect(url_for('profile', username=session["user"]))
+    return redirect(url_for('manage', username=session["user"]))
 
 
 if __name__ == "__main__":
