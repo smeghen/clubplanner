@@ -22,15 +22,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_events")
 def get_events():
-   # Sort all Created Events and display the next 3 events from todays date.  
-
+    # Sort all Created Events and display the next 3 events from todays date
     all_events = list(mongo.db.events.find())
     today_date = date.today()
     events = list()
 
     for event in all_events:
         event_date = datetime.strptime(event.get(
-            'event_date'), '%d %B, %Y').date()
+            'event_date'), '%d %B %Y').date()
         if event_date > today_date:
             event['event_date'] = event_date
             events.append(event)
@@ -40,7 +39,7 @@ def get_events():
 
     for event in events:
         event['event_date'] = datetime.strftime(
-            event.get('event_date'), '%d %B, %Y')
+            event.get('event_date'), '%d %B %Y')
     return render_template("events.html", events=events)
 
 
@@ -82,7 +81,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("manage", username=session["user"]))
             
             else:
                 #incorrect password
@@ -102,7 +101,6 @@ def profile(username):
     user = mongo.db.users.find_one({"username": username.lower()})
     users = mongo.db.users.find({"username": username.lower()})
     groups = mongo.db.groups.find()
-    
 
     if "user" in session:    
         return render_template(
@@ -141,8 +139,8 @@ def add_event():
         venue = request.form.get("facility_name")
         if mongo.db.events.find_one(
                 {"event_date": date,
-                "event_time": time,
-                "facility_name": venue}
+                 "event_time": time,
+                 "facility_name": venue}
                 ):
             flash("Facility already booked!")
             return redirect(url_for("add_event"))
@@ -178,7 +176,7 @@ def edit_event(event_id):
                 "facility_name": venue}
             ):
             flash("Facility already booked!")
-            return redirect(url_for('manage.html', username=session["user"]))
+            return redirect(url_for('manage', username=session["user"]))
         # If facility free db updated
         submit = {
             "event_name": request.form.get("event_name"),
