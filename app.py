@@ -63,9 +63,9 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Congratulations you are now Registered")
         return redirect(url_for(
-            "profile", username=session["user"]))
-    groups = mongo.db.groups.find()
-    return render_template("register.html", groups=groups)
+            "manage", username=session["user"]))
+    
+    return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])

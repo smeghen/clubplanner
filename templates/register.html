@@ -31,20 +31,6 @@
                     </div>
                 </div>
 
-            
-                     <!--Pick group-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">group_add</i>
-                            <select id="group_name" name="group_name" class="validate" required>
-                                <option value="" disabled selected>Select Group</option>
-                                {% for group in groups %}
-                                    <option value="{{ group.group_name }}">{{ group.group_name }}</option>
-                                {% endfor %}
-                            </select>
-                                <label id="group_name">Select Group</label>
-                        </div>
-                    </div>
                     <!--register button-->
                     <div class="row">
                         <p class="center-align">
