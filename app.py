@@ -177,13 +177,16 @@ def edit_event(event_id):
         date = request.form.get("event_date")
         time = request.form.get("event_time")
         venue = request.form.get("facility_name")
+
         if mongo.db.events.find_one(
                 {"event_date": date,
                 "event_time": time,
-                "facility_name": venue}
-            ):
+                "facility_name": venue,
+                "_id": { "$ne": ObjectId(event_id)}}
+                ):
             flash("Facility already booked!")
             return redirect(url_for('manage', username=session["user"]))
+
         # If facility free db updated
         submit = {
             "event_name": request.form.get("event_name"),
@@ -193,10 +196,10 @@ def edit_event(event_id):
             "event_time": request.form.get("event_time"),
             "group_name": request.form.get("group_name"),
             "created_by": session["user"]
-        }
+            }
         mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
         flash("Task Successfully Updated")
-            
+        
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
