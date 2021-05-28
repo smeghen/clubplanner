@@ -33,12 +33,13 @@
 
                             <div class="card-content">
                                 <span class=" text-align-center login center-align">
-                                    {{ event.event_name}}<br>
-                                    {{ event.facility_name }}<br>
-                                    {{ event.event_date }}<br>
-                                    {{ event.event_time }}<br>
-                                    {{ event.event_description }}<br>
-                                    <br>
+                                {{ event.event_name}}<br>
+                                <i>Location:</i> {{ event.facility_name }}<br>
+                                <i>Details:</i> {{ event.event_description }}<br>
+                                <i>Date:</i> {{ event.event_date }}<br>
+                                <i>Time:</i> {{ event.event_time }}<br>
+                                <br>
+                            <br>
                                 </span>
                             </div>
                             <div class="row">

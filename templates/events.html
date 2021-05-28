@@ -33,12 +33,13 @@
                         <i class="material-icons prefix">directions_run</i>
                         {% endif %}
                     <div class="card-content">
-                        <span class="grey-text text-align-center text-darken-4 center-align">{{ event.facility_name }}<br>
+                        <span class="grey-text text-darken-4">
                                 {{ event.event_name}}<br>
-                                {{ event.facility_name }}<br>
-                                {{ event.event_date }}<br>
-                                {{ event.event_time }}<br>
-                                {{ event.event_description }}<br>
+                                <i>Location:</i> {{ event.facility_name }}<br>
+                                <i>Details:</i> {{ event.event_description }}<br>
+                                <i>Date:</i> {{ event.event_date }}<br>
+                                <i>Time:</i> {{ event.event_time }}<br>
+
                                 <br>
                             <br>
                         </span>
@@ -49,25 +50,25 @@
         </div>
     {% endfor %}
   </div>
-
-      <div class="row card-panel grey lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s8 m8">
-                    <i class="grey-text text-align-center text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate black-text" required>
-                    <label for="query">Search Tasks</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_events') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-blue darken-1 btn text-shadow">
+    <div class="row">
+      <div class="card brown lighten-5 col s12 m8 offset-m2">
+            <form action="{{ url_for('search') }}" method="post" class="col s12">
+                <div class="row valign-wrapper center-align">
+                    <div class="input-field col s8 m8">
+                        <i class="grey-text text-align-center text-darken-4"></i>
+                        <input type="text" name="query" id="query" minlength="3" class="validate black-text" required>
+                        <label for="query">Search Events</label>
+                    </div>
+                    <div class="col s12 m4">
+                        <a href="{{ url_for('get_events') }}" class="red btn text-shadow">Reset</a>
+                        <button type="submit" class="light-blue darken-1 btn text-shadow">
                         <i class="fas fa-search left"></i> Search
-                    </button>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-
 
 
 {% endblock %}

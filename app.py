@@ -91,7 +91,7 @@ def login():
                 return redirect(url_for("manage", username=session["user"]))
             
             else:
-                #incorrect password
+                # incorrect password
                 flash("Incorrect Log In")
                 return redirect(url_for("login"))
 
