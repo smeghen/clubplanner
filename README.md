@@ -191,61 +191,16 @@ for the site. These were created using Balsamiq.
 ---
 # Testing
 
-The testing of this project was based on the layout of the site, the proper operation of buttons, dropdown menus, 
-game play, user interaction and the responsiveness of the site on various device sizes.
+
 
 #### Manual Testing
 
-The following browsers were used to test the website – Google Chrome, Microsoft Edge and Safari.
 
-For the testing of this project I devised a spreadsheet detailing the tests to be performed for the various pages and features.
-Below is an image of a small section of this spreadsheet:
-
-![Testing spreadsheet sample](assets/images/Testingsample.PNG "Sample of Testing Spreadsheet")
-
-The full version of the spreadsheet can be downloaded [here.](https://github.com/smeghen/mathstables/blob/master/assets/images/MS2_Testing.xlsx)
-Please note this is a .xlsx file and will require excel, google docs or compatiable program to open the file.
-The testing was performed on PC, Tablet and Mobile devices and all tests passed. I have shown in the spreadsheet the tests
-that caused issues and have included notes in relation to these. 
 
 #### User Stories Testing
 
 
-> I want to immediately understand the nature of the site and be able to easily navigate through the site.
 
-This was addressed on the Home page with an explanation of the site in the centre of the page and 2 buttons to
-navigate with:
-![Home Page](assets/images/landingpage.PNG "Image of Home Page")
-
-> I want to be easily able to understand the rules of the game.
-
-Within the Info modal all the information for the game is outlined:
-![Info Modal](assets/images/info.PNG "Image of Info Modal")
-
-> I want to be easily able to make a selection of the type of game to play.
-
-The Game Select Modal is simple dropdown menus to select your options for the game to play:
-![Game Select Modal](assets/images/gameselect.PNG "Image of Game Select Modal")
-
-> I want to know if my answer is correct or incorrect.
-
-A correct answer is signalled to the user with a positive ping noise and their score increases by 1. 
-With an incorrect answer there is a negative buzzer sound and a popup message:
-![Incorrect Answer Popup](assets/images/incorrectanswer.PNG "Image of Incorrect Answer Popup")
-
-
-> I want to track my progress during the game.
-
-Progress is tracked with the score display, sounds and popups. 
-![Game Progress](assets/images/gameprogress.PNG "Image of Game Play")
-
-> I want to be able to access the site from all device types.
-
-The site was designed using the mobile first approach with the specfic understanding that the majority of users
-would be accessing the game on either tablets or mobile phones. To aid the users in this respect I set the keyboard 
-for these devices to default to number pad when in game play. This makes the game easier to play:
-
-![Game Play Number Pad](assets/images/number_pad.jpg "Game Play Number Pad")
 
 #### User Testing
 
@@ -257,24 +212,6 @@ experience and any bugs that they found. Within this group of people the site wa
 
 #### Validators
 
-I used the  W3 HTML Validation and got only one error message:
-
-![HTML Validator Results](assets/images/HTMLValidator.png "HTML Validator Results")
-
-As this is helping to validate that numbers are only entered by the user and it triggers the number keypad on small
-screens, both of which aid in a better user experience, I choose to ignore the error.
-
-W3 CSS Validation was used to check the CSS used for the site:
-
-![CSS Validator Results](assets/images/CSSValidation.PNG "CSS Validator Results")
-
-The two error messages relate to the Bootstrap cdn and are both out of my control.
-
-JSHint was used to validate the JavaScript:
-
-![JSHint Validator Results](assets/images/JSHint.PNG "JSHint Validator Results")
-
-The undefined variables of $ relate to my use of a small bit of JQuery.
 
 
 
@@ -357,6 +294,10 @@ that declaring the variables of date, time and venue from the input form, and th
 and facility, but upon testing I found that a user could not update the group, description or name of the event. The issue was that the Create Event search on the database when used in the Edit
 Event was actually just finding itself when the date, time and facility had not been edited and returning an Already booked message. The way around this was to put in an extra parameter
 of  "_id": { "$ne": ObjectId(event_id)}. So now the check on the database is for date, time, facility and event id not equal to the id that is being edited, then the event cannot be booked.
+
+* To help highlight the text on the forms for creating and edit an event, I change the colour to white to stand out over the background images. This worked well for all inputs, however for the Datepicker the 
+Month and Date where not visible as is a light coloured background. After a lot of research and trialing different solutions, I was able to resolve the issue with the use og Chrome Dev Tools, by selecting the items involved and finding the 
+Materialize css classes that are controlling the colour and adding my own css styling to these classes.
 
 
 # Credits
