@@ -117,7 +117,13 @@ textarea{
     background-size: cover;
 }
 
-.datepicker-date-display{
-    color: black !important;
-    background-color: tranparent;
+
+/* Datepicker text colour */
+
+.datepicker-controls .select-month input{
+    color: black;
+}
+
+.datepicker-controls .select-year input{
+    color: black;
 }
