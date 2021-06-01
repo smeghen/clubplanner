@@ -197,9 +197,12 @@ def edit_event(event_id):
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     # Remove event from db
-    mongo.db.events.remove({"_id": ObjectId(event_id)})
-    flash("Event Successfully Deleted")
-    return redirect(url_for('manage', username=session["user"]))
+    if "user" in session:    
+        mongo.db.events.remove({"_id": ObjectId(event_id)})
+        flash("Event Successfully Deleted")
+        return redirect(url_for('manage', username=session["user"]))
+    
+    return render_template("login.html")
 
 
 @app.errorhandler(404)

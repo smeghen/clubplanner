@@ -325,7 +325,8 @@ on <a href="https://unsplash.com/s/photos/calendar?utm_source=unsplash&utm_mediu
 
 * Used site: https://www.programiz.com/python-programming/datetime go gain understandingof datetime, strptime and strftime functionality.
 
-* Found the solution to vaildating inputs for Event Name and Description by preventing the usering entering just blank spaces from: https://www.freecodecamp.org/news/how-to-check-if-an-input-is-empty-with-css-1a83715f9f3e/
+* Found the solution to vaildating inputs for Event Name and Description by preventing the usering entering just blank spaces from:
+ https://www.freecodecamp.org/news/how-to-check-if-an-input-is-empty-with-css-1a83715f9f3e/
 
 ---
 
