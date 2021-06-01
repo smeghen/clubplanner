@@ -18,10 +18,9 @@
                     
                         <div class="input-field col s12">
                         <i class="material-icons prefix">description</i>
-                            <textarea id="event_description" name="event_description" minlength="5"
-                            maxlength="200" class="materialize-textarea validate" required>
-                                {{- event.event_description -}}
-                            </textarea>
+                            <input id="event_description" name="event_description" minlength="5"
+                            maxlength="200" type="text" class="materialize-textarea validate" 
+                            value="{{ event.event_description }}" required pattern=".*\S.*">
                             <label for="event_description">Event Description</label>
                         </div>
                     
