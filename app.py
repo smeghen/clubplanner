@@ -149,7 +149,7 @@ def add_event():
         }
         mongo.db.events.insert_one(event)
         flash("Task Successfully Added")
-        return redirect(url_for("add_event"))
+        return redirect(url_for("manage", username=session["user"]))
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
     return render_template(
@@ -185,6 +185,7 @@ def edit_event(event_id):
             }
         mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
         flash("Task Successfully Updated")
+        return redirect(url_for('manage', username=session["user"]))
         
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
