@@ -56,7 +56,7 @@
                                     <p class="center-align">
                                         <a href="{{ url_for('delete_event', event_id=event._id) }}"
                                             class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
-                                        <a href="{{ url_for('profile', username=session['user']) }}"
+                                        <a href="{{ url_for('manage', username=session['user']) }}"
                                             class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
                                     </p>
                                 </div>
