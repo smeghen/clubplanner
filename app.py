@@ -202,6 +202,12 @@ def delete_event(event_id):
     return redirect(url_for('manage', username=session["user"]))
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    #  404 error function
+    return render_template('404.html', error=error), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
