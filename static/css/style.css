@@ -1,4 +1,4 @@
-/* Colour */
+/* home page */
 
 body {
     background-color: #fefae0;
@@ -34,32 +34,10 @@ body {
     margin-top: 10rem;
 }
 
-#login{
-    min-height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-   justify-content: center;
-   
-    flex-direction: column;
-    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/flags.jpg") center center no-repeat;
-    background-size: cover;
-}
+/* Form style for login, register, create event and edit event */
 
 .login{
     color: white;
-}
-
-#register{
-    min-height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-   justify-content: center;
-   
-    flex-direction: column;
-    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch.jpg") center center no-repeat;
-    background-size: cover;
 }
 
 .form{
@@ -81,38 +59,53 @@ textarea{
     font-size: 25px !important;   
 }
 
+/* Background images for pages*/
+#login{
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/flags.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+#register{
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch.jpg") center center no-repeat;
+    background-size: cover;
+}
+
 #event{
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;
-   justify-content: center;
-   
+    justify-content: center; 
     flex-direction: column;
-    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch2.jpg") center center no-repeat;
     background-size: cover;
 }
 
 #edit-event{
-        min-height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     display: flex;
-   justify-content: center;
-   
+    justify-content: center;
     flex-direction: column;
-    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
     background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/static/images/training.jpg") center center no-repeat;
     background-size: cover;
 }
 
 #manage-event{
-        min-height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
-    
-   justify-content: center;
-   
+    justify-content: center;
     flex-direction: column;
-    /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/postit.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -126,4 +119,32 @@ textarea{
 
 .datepicker-controls .select-year input{
     color: black;
+}
+
+/* media queries*/ 
+
+@media (max-width: 576px){
+    .title{
+        font-size: 3rem;
+    }
+
+    .info-text{
+        font-size: 1.5rem;
+    }
+
+    .btn-parallax{
+        font-size: 10px;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-top: 5rem;
+}
+}
+
+@media (max-width: 768px){
+    .btn-parallax{
+        font-size: 12px;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-top: 5rem;
+    }
 }
