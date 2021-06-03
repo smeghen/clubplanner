@@ -6,6 +6,7 @@
             <div class="row center">
                 <p class="centre-align text-black title">Club Planner</p>
                 <p class="centre-align text-black info-text">A central point for scheduling club activities.</p>
+                <p class="centre-align"><a href="#about-modal" class="waves-effect waves-light green lighten-2 btn modal-trigger">About</a></p>
                 <a href="{{ url_for('login') }}" class="waves-effect waves-light red lighten-2 btn btn-parallax">Log In</a>
                 <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn btn-parallax">Register</a>
             </div>
@@ -72,6 +73,21 @@
             </form>
         </div>
     </div>
+
+                                <!-- About Modal -->
+                            <div id="about-modal" class="modal center-align">
+                                <div class="modal-content brown lighten-5 center-align">
+                                    <h4>About</h4>
+                                    <p>This site is all about viewing, scheduling and managing upcoming club events, be they training sessions, matches or fundraising activities. The home page displays the next 3 upcoming events, but if you are interested in specific activities, use the search function to check for events based on location, groups or descriptions.<br><br>
+If you want to book an event, Register as a user and simply Create an Event by entering the required details. The site will check the availability of the required facility so that there will not any double booking of facilities. As with everything changes can happen, so if you need to make changes to an event you have create simply access it from your Profile page and make the necessary changes.
+</p>
+                                    <p class="center-align">
+                                        <a href="{{ url_for('get_events') }}"
+                                            class="modal-close waves-effect waves-light blue lighten-3 btn">Back</a>
+
+                                    </p>
+                                </div>
+                            </div>
 
 
 {% endblock %}
