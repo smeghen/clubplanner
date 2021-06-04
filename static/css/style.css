@@ -105,7 +105,7 @@ textarea{
     min-height: 100vh;
     overflow-x: hidden;
     justify-content: center;
-    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/postit.jpg") center center no-repeat;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/calendar.jpg") center center no-repeat;
     background-size: cover;
 }
 

@@ -15,12 +15,12 @@
                                 </p>
                             </div>
         
-        <div class="row event-card z-depth-5">    
+        <div class="row event-card">    
         {% for event in events %}
                 <div class="container">
-                    <div class="card form hoverable col s12 m6 l4">
-                        <div class="card-title login center-align">
-                            <span class=" text-align-center login">
+                    <div class="card brown lighten-5 grey-text text-darken-4 hoverable col s12 m6 l4">
+                        <div class="card-title  center-align">
+                            <span class=" text-align-center ">
                                 <strong>{{ event.group_name }}</strong><br>
                             </span>
                             {% if event.facility_name|lower() == "main pitch" %}
@@ -32,7 +32,7 @@
                             {% endif %}
 
                             <div class="card-content">
-                                <span class=" text-align-center login center-align">
+                                <span class=" text-align-center center-align">
                                 {{ event.event_name}}<br>
                                 <i>Location:</i> {{ event.facility_name }}<br>
                                 <i>Details:</i> {{ event.event_description }}<br>
