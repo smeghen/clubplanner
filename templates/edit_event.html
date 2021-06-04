@@ -2,94 +2,88 @@
 {% block content %}
 <section id="edit-event">
     <H3 class="center-align login">Edit Event</h3>
-        <div class="row">
-            <form class="form col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_event', event_id=event._id) }}">
-            
-                <!--Event Name-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">create</i>
-                            <input id="event_name" name="event_name" minlength="5"
-                            value="{{ event.event_name }}" maxlength="50" type="text" class="validate" required pattern=".*\S.*">
-                            <label for="event_name">Event Name</label>
-                        </div>
-                    
-                    <!--Event Description-->
-                    
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">description</i>
-                            <input id="event_description" name="event_description" minlength="5"
-                            maxlength="200" type="text" class="materialize-textarea validate" 
-                            value="{{ event.event_description }}" required pattern=".*\S.*">
-                            <label for="event_description">Event Description</label>
-                        </div>
-                    
-                    <!--Pick Facility-->
-                   
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">place</i>
-                            <select id="facility_name" name="facility_name" class="validate" required>
-                                <option value="" selected>Select Facility</option>
-                                {% for facility in facilities %}
-                                    {% if facility.facility_name == event.facility_name %}
-                                        <option value="{{ facility.facility_name }}" selected>{{ facility.facility_name }}</option>
-                                    {% else %}
-                                        <option value="{{ facility.facility_name }}">{{ facility.facility_name }}</option>
-                                    {% endif %}
-                                {% endfor %}
-                            </select>
-                                <label for="facility_name" class="white-text">Select Facility</label>
-                        </div>
-                   
-                    <!--Pick group-->
-                    
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">group_add</i>
-                            <select id="group_name" name="group_name" class="validate" required>
-                                <option value="" selected>Select Group</option>
-                                {% for group in groups %}
-                                    {% if group.group_name == event.group_name %}
-                                        <option value="{{ group.group_name }}" selected>{{ group.group_name }}</option>
-                                    {% else %}
-                                        <option value="{{ group.group_name }}">{{ group.group_name }}</option>
-                                    {% endif %}
-                                {% endfor %}
-                            </select>
-                                <label id="group_name">Select Group</label>
-                        </div>
-                    
-                    <!--Date Picker-->
-                    
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">event</i>
-                            <input id="event_date" name="event_date" value="{{ event.event_date }}" 
-                           type="text" class="validate datepicker" required>
-                            <label for="event_date">Event Date</label>
-                        </div>
-                    
-                    <!--Time Picker-->
-                    
-                        <div class="input-field col s12">
-                        <i class="material-icons prefix">schedule</i>
-                            <input id="event_time" name="event_time" value="{{ event.event_time }}"
-                           type="text" class="validate timepicker" required>
-                            <label for="event_time">Event Time</label>
-                        </div>
-                        </div>
-                    
-                            <!--Submit button-->
-                    <div class="row">
-                        <p class="center-align">
-                             <button type="submit" class="waves-effect waves-light blue lighten-3 btn">Confirm Edit</button>
-                             <a href="{{ url_for('manage', username=session['user']) }}" class="waves-effect waves-light red lighten-2 btn">Cancel</a>
-                        </p>
-                    </div>
-                
-            </form>  
-        </div>
-    
-</section>
+    <div class="row">
+        <form class="form col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_event', event_id=event._id) }}">
 
+            <!--Event Name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">create</i>
+                    <input id="event_name" name="event_name" minlength="5" value="{{ event.event_name }}" maxlength="50"
+                        type="text" class="validate" required pattern=".*\S.*">
+                    <label for="event_name">Event Name</label>
+                </div>
+
+                <!--Event Description-->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">description</i>
+                    <input id="event_description" name="event_description" minlength="5" maxlength="200" type="text"
+                        class="materialize-textarea validate" value="{{ event.event_description }}" required
+                        pattern=".*\S.*">
+                    <label for="event_description">Event Description</label>
+                </div>
+
+                <!--Pick Facility-->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">place</i>
+                    <select id="facility_name" name="facility_name" class="validate" required>
+                        <option value="" selected>Select Facility</option>
+                        {% for facility in facilities %}
+                        {% if facility.facility_name == event.facility_name %}
+                        <option value="{{ facility.facility_name }}" selected>{{ facility.facility_name }}</option>
+                        {% else %}
+                        <option value="{{ facility.facility_name }}">{{ facility.facility_name }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="facility_name" class="white-text">Select Facility</label>
+                </div>
+
+                <!--Pick group-->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">group_add</i>
+                    <select id="group_name" name="group_name" class="validate" required>
+                        <option value="" selected>Select Group</option>
+                        {% for group in groups %}
+                        {% if group.group_name == event.group_name %}
+                        <option value="{{ group.group_name }}" selected>{{ group.group_name }}</option>
+                        {% else %}
+                        <option value="{{ group.group_name }}">{{ group.group_name }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label id="group_name">Select Group</label>
+                </div>
+
+                <!--Date Picker-->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">event</i>
+                    <input id="event_date" name="event_date" value="{{ event.event_date }}" type="text"
+                        class="validate datepicker" required>
+                    <label for="event_date">Event Date</label>
+                </div>
+
+                <!--Time Picker-->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">schedule</i>
+                    <input id="event_time" name="event_time" value="{{ event.event_time }}" type="text"
+                        class="validate timepicker" required>
+                    <label for="event_time">Event Time</label>
+                </div>
+            </div>
+
+            <!--Submit button-->
+            <div class="row">
+                <p class="center-align">
+                    <button type="submit" class="waves-effect waves-light blue lighten-3 btn">Confirm Edit</button>
+                    <a href="{{ url_for('manage', username=session['user']) }}"
+                        class="waves-effect waves-light red lighten-2 btn">Cancel</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</section>
 
 
 

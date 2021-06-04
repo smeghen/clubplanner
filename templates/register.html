@@ -2,52 +2,50 @@
 {% block content %}
 <section id="register">
 
-<H3 class="center-align login">Register</h3>
-<div class="row z-depth-5">
-    
-                    <form method="POST" class="col s12 form" action="{{ url_for('register') }}">
-                    
-                    <!--username  -->
-                <div class="row">
-                    
-                    <div class="input-field col s12  white-text text-darken-4 center-align">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate input-color" required>
-                        <label for="username">Username</label>
-                        <span class="helper-text" data-error="Username must be at least 5 characters and can contain numbers"
-                            data-success="Accepted"></span>
-                    </div>
-                
-                <!--password-->
-                
-                    <div class="input-field col s12 grey-text text-darken-4 center-align">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate input-color" required>
-                        <label for="password">Password</label>
-                        <span class="helper-text" data-error="Password must be at between 5 and 15 characters"
-                            data-success="Accepted"></span>
-                    </div>
+    <H3 class="center-align login">Register</h3>
+    <div class="row z-depth-5">
+
+        <form method="POST" class="col s12 form" action="{{ url_for('register') }}">
+
+            <!--username  -->
+            <div class="row">
+                <div class="input-field col s12  white-text text-darken-4 center-align">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate input-color" required>
+                    <label for="username">Username</label>
+                    <span class="helper-text"
+                        data-error="Username must be at least 5 characters and can contain numbers"
+                        data-success="Accepted"></span>
                 </div>
 
-                    <!--register button-->
-                    <div class="row">
-                        <p class="center-align">
-                            <button type="submit" class="waves-effect waves-light red lighten-2 btn">Register</button>
-                        </p>
-                    </div>  
-                </form>
+                <!--password-->
+                <div class="input-field col s12 grey-text text-darken-4 center-align">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate input-color" required>
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="Password must be at between 5 and 15 characters"
+                        data-success="Accepted"></span>
+                </div>
             </div>
- 
 
-<!--Log in button-->
-<h6 class="center-align login">Already Registered?</h6>
-<div class="row">
-    <p class="center-align">
-        <a href="{{ url_for('login') }}" class="waves-effect waves-light blue lighten-3 btn">Log In</a>
-    </p>
-</div>
+            <!--register button-->
+            <div class="row">
+                <p class="center-align">
+                    <button type="submit" class="waves-effect waves-light red lighten-2 btn">Register</button>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <!--Log in button-->
+    <h6 class="center-align login">Already Registered?</h6>
+    <div class="row">
+        <p class="center-align">
+            <a href="{{ url_for('login') }}" class="waves-effect waves-light blue lighten-3 btn">Log In</a>
+        </p>
+    </div>
 
 </section>
 {% endblock %}

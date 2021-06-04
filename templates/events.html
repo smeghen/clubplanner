@@ -6,13 +6,15 @@
             <div class="row center">
                 <p class="centre-align text-black title">Club Planner</p>
                 <p class="centre-align text-black info-text">A central point for scheduling club activities.</p>
-                <p class="centre-align"><a href="#about-modal" class="waves-effect waves-light green lighten-2 btn modal-trigger">About</a></p>
+                <p class="centre-align"><a href="#about-modal"
+                        class="waves-effect waves-light green lighten-2 btn modal-trigger">About</a></p>
                 <a href="{{ url_for('login') }}" class="waves-effect waves-light red lighten-2 btn btn-parallax">Log In</a>
-                <a href="{{ url_for('register') }}" class="waves-effect waves-light blue lighten-3 btn btn-parallax">Register</a>
+                <a href="{{ url_for('register') }}"
+                    class="waves-effect waves-light blue lighten-3 btn btn-parallax">Register</a>
             </div>
         </div>
-            <div class="parallax"><img class="responsive-img" src="{{ url_for('static', filename='images/calendar.jpg') }}">
-            </div>
+        <div class="parallax"><img class="responsive-img" src="{{ url_for('static', filename='images/calendar.jpg') }}">
+        </div>
     </div>
     
     
@@ -24,25 +26,25 @@
             <div class="card brown lighten-5 center-align hoverable col s12 m12 l4">
                 <div class="card-title grey-text text-darken-4 center-align">
                     <span class="grey-text text-align-center text-darken-4">
-                            <strong>{{ event.group_name }}</strong><br>
-                        
+                        <strong>{{ event.group_name }}</strong><br>
+    
                     </span>
-                        {% if event.facility_name|lower() == "main pitch" %}
-                        <i class="material-icons prefix">sports_volleyball</i>
-                        {% elif event.facility_name|lower() == "club house" %}
-                        <i class="material-icons prefix">other_houses</i>
-                        {% elif event.facility_name|lower() == "training pitch"%}
-                        <i class="material-icons prefix">directions_run</i>
-                        {% endif %}
+                    {% if event.facility_name|lower() == "main pitch" %}
+                    <i class="material-icons prefix">sports_volleyball</i>
+                    {% elif event.facility_name|lower() == "club house" %}
+                    <i class="material-icons prefix">other_houses</i>
+                    {% elif event.facility_name|lower() == "training pitch"%}
+                    <i class="material-icons prefix">directions_run</i>
+                    {% endif %}
                     <div class="card-content">
                         <span class="grey-text text-darken-4">
-                                {{ event.event_name}}<br>
-                                <i>Location:</i> {{ event.facility_name }}<br>
-                                <i>Details:</i> {{ event.event_description }}<br>
-                                <i>Date:</i> {{ event.event_date }}<br>
-                                <i>Time:</i> {{ event.event_time }}<br>
-
-                                <br>
+                            {{ event.event_name}}<br>
+                            <i>Location:</i> {{ event.facility_name }}<br>
+                            <i>Details:</i> {{ event.event_description }}<br>
+                            <i>Date:</i> {{ event.event_date }}<br>
+                            <i>Time:</i> {{ event.event_time }}<br>
+    
+                            <br>
                             <br>
                         </span>
                     </div>
@@ -50,44 +52,51 @@
             </div>
     
         </div>
-    {% endfor %}
-  </div>
+        {% endfor %}
+    </div>
     <div class="row">
-      <div class="card brown lighten-5 col s12 m8 offset-m2">
+        <div class="card brown lighten-5 col s12 m8 offset-m2">
             <form action="{{ url_for('search') }}" method="post" class="col s12">
                 <div class="row valign-wrapper center-align">
                     <div class="input-field col s12 ">
                         <i class="grey-text text-align-center text-darken-4"></i>
                         <input type="text" name="query" id="query" minlength="3" class="validate black-text" required>
                         <label for="query">Search Events</label>
-                    </div> 
+                    </div>
                 </div>
                 <div class="row valign-wrapper">
-                <div class="col s12 center-align ">
-                        <a href="{{ url_for('get_events') }}" class="waves-effect waves-light red lighten-2 btn"><i class="fas fa-redo-alt left"></i>Reset</a>
+                    <div class="col s12 center-align ">
+                        <a href="{{ url_for('get_events') }}" class="waves-effect waves-light red lighten-2 btn"><i
+                                class="fas fa-redo-alt left"></i>Reset</a>
                         <button type="submit" class="waves-effect waves-light blue lighten-3 btn">
-                        <i class="fas fa-search left"></i> Search
+                            <i class="fas fa-search left"></i> Search
                         </button>
                     </div>
-                    </div>
+                </div>
             </form>
         </div>
     </div>
-
-                                <!-- About Modal -->
-                            <div id="about-modal" class="modal center-align">
-                                <div class="modal-content brown lighten-5 center-align">
-                                    <h4>About</h4>
-                                    <p>This site is all about viewing, scheduling and managing upcoming club events, be they training sessions, matches or fundraising activities. The home page displays the next 3 upcoming events, but if you are interested in specific activities, use the search function to check for events based on location, groups or descriptions.<br><br>
-If you want to book an event, Register as a user and simply Create an Event by entering the required details. The site will check the availability of the required facility so that there will not be any double booking of facilities. As with everything changes can happen, so if you need to make changes to an event you have created simply access it from your Profile page and make the necessary changes.
-</p>
-                                    <p class="center-align">
-                                        <a href="{{ url_for('get_events') }}"
-                                            class="modal-close waves-effect waves-light blue lighten-3 btn">Back</a>
-
-                                    </p>
-                                </div>
-                            </div>
+    
+    <!-- About Modal -->
+    <div id="about-modal" class="modal center-align">
+        <div class="modal-content brown lighten-5 center-align">
+            <h4>About</h4>
+            <p>This site is all about viewing, scheduling and managing upcoming club events, be they training sessions,
+                matches or fundraising activities. The home page displays the next 3 upcoming events, but if you are
+                interested in specific activities, use the search function to check for events based on location, groups or
+                descriptions.<br><br>
+                If you want to book an event, Register as a user and simply Create an Event by entering the required
+                details. The site will check the availability of the required facility so that there will not be any double
+                booking of facilities. As with everything changes can happen, so if you need to make changes to an event you
+                have created simply access it from your Profile page and make the necessary changes.
+            </p>
+            <p class="center-align">
+                <a href="{{ url_for('get_events') }}"
+                    class="modal-close waves-effect waves-light blue lighten-3 btn">Back</a>
+    
+            </p>
+        </div>
+    </div>
 
 
 {% endblock %}

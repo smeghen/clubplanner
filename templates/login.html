@@ -2,26 +2,22 @@
 {% block content %}
     <section id="login">
         <H3 class="center-align login">Log In</h3>
-            
+    
         <div class="row">
-           
-            
             <form method="POST" class="form col s12" action="{{ url_for('login') }}">
-
                 <!--username  -->
                 <div class="row">
-                    
                     <div class="input-field col s12 grey-text text-darken-4 center-align">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="username" name="username" type="text" minlength="5" maxlength="15"
                             pattern="^[a-zA-Z0-9]{5,15}$" class="validate input-color" required>
                         <label for="username">Username</label>
-                        <span class="helper-text" data-error="Username must be at least 5 characters and can contain numbers"
+                        <span class="helper-text"
+                            data-error="Username must be at least 5 characters and can contain numbers"
                             data-success="Accepted"></span>
                     </div>
-                
-                <!--password-->
-                
+    
+                    <!--password-->
                     <div class="input-field col s12 grey-text text-darken-4 center-align">
                         <i class="material-icons prefix">lock</i>
                         <input id="password" name="password" type="password" minlength="5" maxlength="15"
@@ -31,7 +27,7 @@
                             data-success="Accepted"></span>
                     </div>
                 </div>
-
+    
                 <!--Log In button-->
                 <div class="row">
                     <p class="center-align">
@@ -39,11 +35,8 @@
                     </p>
                 </div>
             </form>
-            
         </div>
-                    
-
-
+    
         <div class="row">
             <!--Register Button-->
             <h6 class="center-align login">Not Registered Yet?</h6>
@@ -53,7 +46,7 @@
                 </p>
             </div>
         </div>
-</section>
+    </section>
 
 
 
