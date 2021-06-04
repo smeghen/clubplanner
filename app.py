@@ -42,7 +42,7 @@ def get_events():
             event.get('event_date'), '%d %B %Y')
     return render_template("events.html", events=events)
 
-
+# Search function for taking user input and search db for relevant results
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -50,6 +50,7 @@ def search():
     return render_template("events.html", events=events)
 
 
+# Register a new user to the db
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -63,8 +64,7 @@ def register():
         
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "group_name": request.form.get("group_name")
+            "password": generate_password_hash(request.form.get("password"))
             }
         mongo.db.users.insert_one(register)
         session["user"] = request.form.get("username").lower()
@@ -75,6 +75,7 @@ def register():
     return render_template("register.html")
 
 
+# Login for Existing users
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -110,9 +111,10 @@ def logout():
     return redirect(url_for("get_events"))
 
 
+# User Profile function for displaying Events created by them
 @app.route("/manage/<username>", methods=["GET", "POST"])
 def manage(username):
-    # grab the session user's username from db and display Evnets create by them
+    # grab the session user's username from db and search db
     user = mongo.db.users.find_one({"username": username.lower()})
     events = mongo.db.events.find({"created_by": username.lower()})
 
@@ -123,6 +125,7 @@ def manage(username):
     return redirect(url_for(login))
 
 
+# Create an Event
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
     if request.method == "POST":
@@ -155,7 +158,7 @@ def add_event():
     return render_template(
         "add_event.html", facilities=facilities, groups=groups)
 
-
+ # Edit events that the user has created
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     if request.method == "POST":
@@ -194,6 +197,7 @@ def edit_event(event_id):
         "edit_event.html", event=event, facilities=facilities, groups=groups)
 
 
+# Delete an event that a user has created
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     # Remove event from db
