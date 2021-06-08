@@ -31,6 +31,7 @@ This site could be easily modified to other clubs, by modifying the styling of t
     * [Design](#Design)
         * [Colour Scheme](#Colour-Scheme)
         * [Imagery](#Imagery)
+        * [Database Schema](#Database-Schema)
         * [Wireframes](#Wireframes)
 
     * [Differences to Design](#Differences-to-Design)
@@ -94,6 +95,10 @@ confirm the availability.
 Delete Event Page – User will be asked if they are sure they want to delete an event. If they do then the event will be deleted and Facility, Date and 
 Time will become available again.
 
+Below is a Site diagram that I used as a basis for the structure of the project:
+
+![Site Structure](static/images/Site-Structure.png "Site Structure Diagram")
+
 
 ## Design:
 
@@ -108,6 +113,11 @@ The Calendar image is by Eric Rothermel I obtained from Unsplash and used for bo
 the club grounds which I took myself. The Training image Photo by Ambitious Creative Co. Rick Barrett, obtained from Unsplash is used on the Edit event page.
  
 
+#### Database Schema:
+
+Below is the database schema that I devised for the project:
+
+![Database Schema](static/images/Database-Schema.png "Database Schema")
 
 
 #### Wireframes:
