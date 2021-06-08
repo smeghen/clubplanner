@@ -11,14 +11,13 @@ This site was designed for the third milestone project in Full Stack Software De
 ## Club Planner
 
 I decided to create an events planner site for a football club that I am involved with, to aid with the booking of the club facilities for training, meetings, matches
-and other club activities. The idea being that this is centre location that users can access to view book events, view upcoming events and see the availability of
-the various facilities..........
-This project is based on the scheduling of activities for a Club (e.g. a Football Club), the idea being that users are able to book various events and 
-the different facilities the club has. When creating an event, users are booking the required facility based on its availability and for specific groups. 
-An example would be Senior Football training on Main pitch at a specific date and time. Users on registration, setup their profile with the groups that are 
-relevant to them, so when an event is created within a specific group, this event will appear on their profile page once they log onto the site. 
+and other club activities. The idea being that this is a central location that users can access to view booked events, view upcoming events and see the availability of
+the various facilities in this case Main Pitch, Training Pitch and the Club House.
+When creating an event, users are booking the required facility based on its availability and for specific groups. 
+An example would be Boys Under 10 Football training on Main pitch at a specific date and time, the application checks the database to see if there are any other
+bookings for the selected facility on the date and time specified. In this this way there is not the possibility of double bookings is prevented. 
 
-This site could be easily modified to other clubs. 
+This site could be easily modified to other clubs, by modifying the styling of the site and creating a separate database which would be specific to the facilities of that club. 
 
  The live website can be found here: https://club-planner.herokuapp.com/
 
@@ -83,15 +82,12 @@ Home Page – Will have a photo of the Club with buttons to Login and Register. 
 
 Log in Page – For Registered users provides fields for inputting Username and Password. Will also display link for users not already registered.
 
-Register Page – For New users shows fields for Username and Password to register for the site. Once registered they will be directed to the Edit Profile 
-Page so that they can select the Groups relevant to them. Also, there will be a link for Users to login in case they have navigated to the wrong page.
+Register Page – For New users shows fields for Username and Password to register for the site. Once registered they will be directed to their Profile 
+Page. Also, there will be a link for Users to login in case they have navigated to the wrong page.
 
-Profile Page – When a User logs in the events that are relevant to them are displayed. There will be links for Creating an event and Editing an event.
+Profile Page – When a User logs in the Events that they have created will be displayed, or if they do not have any Events created notifying that there is none. There will be links for Creating an event and Editing an event. 
 
-Edit Profile – Change profile of user by selecting or deselecting Groups based on what events they want to know about. 
-
-Schedule Event Page – Create an event using Dropdown for Facility, Date and Time Picker. Will also assign the Event to specific Group so that it will be 
-displayed to members of that group. Availability will be checked to see if the required Time, Date and Facility have already been booked. 
+Schedule Event Page – Create an event using Dropdown for Facility, Date and Time Picker. Will also assign the Event to specific Group. Availability will be checked to see if the required Time, Date and Facility have already been booked. 
 
 Edit Event Page – Change a scheduled event by changing the specific fields. If a change to Facility, Date or Time is made, a check will take place to 
 confirm the availability.
