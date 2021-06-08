@@ -30,7 +30,6 @@ This site could be easily modified to other clubs, by modifying the styling of t
     * [Structure](#Structure)
     * [Design](#Design)
         * [Colour Scheme](#Colour-Scheme)
-        * [Typography](#Typography)
         * [Imagery](#Imagery)
         * [Wireframes](#Wireframes)
 
@@ -99,13 +98,14 @@ Time will become available again.
 ## Design:
 
 #### Colour scheme: 
+The colour scheme for the site consists of very neutral colours that do not over power the content of the site. I choose to utilize the standard Materialize colour palette
+of brown lighten-5 for the cards on the Home page and Profile Page. Also, I used lighened versions of Red, Blue and Green for buttons throughout the site.
 
-
-
-#### Typography:
 
 
 #### Imagery:
+The Calendar image is by Eric Rothermel I obtained Unsplash and used for both the Home and Profile pages. The background images for Login, Register and Create Event Pages, are pictures of 
+the club grounds which I took myself. The Training image Photo by Ambitious Creative Co. Rick Barrett, obtained from Unsplash is used on the Edit event page.
  
 
 
@@ -304,8 +304,6 @@ on <a href="https://unsplash.com/s/photos/calendar?utm_source=unsplash&utm_mediu
 
 * Training image Photo by <a href="https://unsplash.com/@weareambitious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ambitious Creative Co.  
  Rick Barrett</a> on <a href="https://unsplash.com/s/photos/team-training?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
- * Postis image by <a href="https://unsplash.com/@epicantus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daria Nepriakhina</a> on <a href="https://unsplash.com/s/photos/post-it?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
  * Found this code for checking that there are results in the database for Events created by user, instead of using {% if events|length > 0 %} https://stackoverflow.com/questions/65477524/flask-and-jinja-template-throwing-error-object-of-type-cursor-has-no-len
 
