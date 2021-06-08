@@ -104,7 +104,7 @@ of brown lighten-5 for the cards on the Home page and Profile Page. Also, I used
 
 
 #### Imagery:
-The Calendar image is by Eric Rothermel I obtained Unsplash and used for both the Home and Profile pages. The background images for Login, Register and Create Event Pages, are pictures of 
+The Calendar image is by Eric Rothermel I obtained from Unsplash and used for both the Home and Profile pages. The background images for Login, Register and Create Event Pages, are pictures of 
 the club grounds which I took myself. The Training image Photo by Ambitious Creative Co. Rick Barrett, obtained from Unsplash is used on the Edit event page.
  
 
@@ -156,8 +156,14 @@ for the site. These were created using Balsamiq.
 
 ### Differences to Design
 
+ * Home Page - I pretty much stuck to the my original design for the Home Page, I did change the Events being displayed to the next three events based on todays date. I also added an About Modal with 
+ an explanation of the site, which is accessed from a button located on the parallax image. Finallly, I included a Search option below the displayed Events, so that users can search all the events 
+ based on Facility, Name, Group Name and Description.
 
-
+ * During the development process I decided to change the way of handling the User Profile based on the usability of the site and the added administration that would be required of a user for maintaining
+ the Groups that they would be interested. Based on this decision I totally removed the Edit Profile page from my design and consolidated the Profile page with the Edit/Delete Event Page. By doing this the Profile page now
+ displays any events that a user has created, and within the card for each event is the option buttons to Edit or Delete the event. Also, added to the top of the page is a Create Event button. By making these changes I believe
+ it makes it easier for users to navigate the site and control their Events.
 
 
 
