@@ -161,7 +161,7 @@ for the site. These were created using Balsamiq.
  based on Facility, Name, Group Name and Description.
 
  * During the development process I decided to change the way of handling the User Profile based on the usability of the site and the added administration that would be required of a user for maintaining
- the Groups that they would be interested. Based on this decision I totally removed the Edit Profile page from my design and consolidated the Profile page with the Edit/Delete Event Page. By doing this the Profile page now
+ the Groups that they would be interested in. Based on this decision I totally removed the Edit Profile page from my design and consolidated the Profile page with the Edit/Delete Event Page. By doing this the Profile page now
  displays any events that a user has created, and within the card for each event is the option buttons to Edit or Delete the event. Also, added to the top of the page is a Create Event button. By making these changes I believe
  it makes it easier for users to navigate the site and control their Events.
 
@@ -171,6 +171,8 @@ for the site. These were created using Balsamiq.
 ### Features to be Implemented in Future
 
 * Contact page with standard form for asking questions or passing on suggestions
+* Administration Function for assisting with Users that forget passwords or usernames. 
+* Administration Function that has the permission to Edit or Delete any events, so that assistance can be given to Users.
 
 
 ---

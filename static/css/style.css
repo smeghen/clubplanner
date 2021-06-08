@@ -21,7 +21,10 @@ body {
     font-size: 2rem;
 }
 
-
+.card-text{
+    color: black;
+    font-weight: 400;
+}
 /* css styling for getting buttons centered in parallax found on https://codepen.io/j_holtslander/pen/NoKqQP */
 .parallax-container 
 	.valign-wrapper	{
