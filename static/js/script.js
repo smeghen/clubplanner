@@ -9,7 +9,7 @@ $(document).ready(function () {
      $('.modal').modal();
     $('.datepicker').datepicker({
         setDefaultDate: true,
-        format: "dd mmmm yyyy",
+        format: "dd mmm yyyy",
         yearRange: 2,
         showClearBtn: true,
         i18n: {

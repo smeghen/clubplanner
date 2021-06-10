@@ -4,7 +4,7 @@
 
 
 This site was designed for the third milestone project in Full Stack Software Development with the Code Institute, based on the learnings from HTML, CSS, Python and Flask Framework as Backend and MongoDB as the database.
-![Site mockup]
+![Site Mockup](static/images/Multi-device.PNG "Site Mockup")
 
 ---
 
