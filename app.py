@@ -42,6 +42,7 @@ def get_events():
             event.get('event_date'), '%d %B %Y')
     return render_template("events.html", events=events)
 
+
 # Search function for taking user input and search db for relevant results
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -61,7 +62,7 @@ def register():
         if existing_user:
             flash("This Username already Exists")
             return redirect(url_for("register"))
-        
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -71,7 +72,7 @@ def register():
         flash("Congratulations you are now Registered")
         return redirect(url_for(
             "manage", username=session["user"]))
-    
+
     return render_template("register.html")
 
 
@@ -82,14 +83,14 @@ def login():
         # Check if username already exists on DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
             # Check password matches DB
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for("manage", username=session["user"]))
-            
+
             else:
                 # incorrect password
                 flash("Incorrect Log In")
@@ -117,7 +118,7 @@ def manage(username):
     user = mongo.db.users.find_one({"username": username.lower()})
     events = mongo.db.events.find({"created_by": username.lower()})
 
-    if "user" in session:    
+    if "user" in session:
         return render_template(
             "manage.html", user=user, events=events)
 
@@ -157,7 +158,8 @@ def add_event():
     return render_template(
         "add_event.html", facilities=facilities, groups=groups)
 
- # Edit events that the user has created
+
+# Edit events that the user has created
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     if request.method == "POST":
@@ -168,9 +170,9 @@ def edit_event(event_id):
 
         if mongo.db.events.find_one(
                 {"event_date": date,
-                "event_time": time,
-                "facility_name": venue,
-                "_id": { "$ne": ObjectId(event_id)}}
+                 "event_time": time,
+                 "facility_name": venue,
+                 "_id": {"$ne": ObjectId(event_id)}}
                 ):
             flash("Facility already booked!")
             return redirect(url_for('manage', username=session["user"]))
@@ -188,7 +190,7 @@ def edit_event(event_id):
         mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
         flash("Task Successfully Updated")
         return redirect(url_for('manage', username=session["user"]))
-        
+
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     facilities = mongo.db.facilities.find().sort("facility_name", 1)
     groups = mongo.db.groups.find()
@@ -200,11 +202,11 @@ def edit_event(event_id):
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     # Remove event from db
-    if "user" in session:    
+    if "user" in session:
         mongo.db.events.remove({"_id": ObjectId(event_id)})
         flash("Event Successfully Deleted")
         return redirect(url_for('manage', username=session["user"]))
-    
+
     return render_template("login.html")
 
 
