@@ -129,6 +129,29 @@ textarea{
     color: black;
 }
 
+/*---- Footer ----*/
+
+
+.footer-icons{
+   margin-right: 20px;
+   margin-left: 20px;
+   margin-top: 10px;
+   font-size: 25px;
+}
+
+.footer-icons a {
+    color: white;  
+}
+
+.footer-icons a:hover {
+   color: black;
+   background: transparent;
+}
+
+.footer{
+    color: white; 
+}
+
 /* media queries*/ 
 
 @media (max-width: 576px){
