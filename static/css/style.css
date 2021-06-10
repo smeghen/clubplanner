@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* home page */
 
 body {
@@ -66,10 +73,19 @@ textarea{
 #login{
     min-height: 100vh;
     overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/static/images/flags.jpg") center center no-repeat;
+    background:  -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/flags.jpg") center center no-repeat;
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/flags.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -77,9 +93,18 @@ textarea{
 #register{
     min-height: 100vh;
     overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/static/images/pitch.jpg") center center no-repeat;
+    background:  -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch.jpg") center center no-repeat;
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -87,9 +112,18 @@ textarea{
 #event{
     min-height: 100vh;
     overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center; 
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; 
+    -webkit-box-orient: vertical; 
+    -webkit-box-direction: normal; 
+        -ms-flex-direction: column; 
+            flex-direction: column;
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/static/images/pitch2.jpg") center center no-repeat;
+    background:  -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch2.jpg") center center no-repeat;
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/pitch2.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -97,9 +131,18 @@ textarea{
 #edit-event{
     min-height: 100vh;
     overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("/static/images/training.jpg") center center no-repeat;
+    background:  -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/static/images/training.jpg") center center no-repeat;
     background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/static/images/training.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -107,7 +150,11 @@ textarea{
 #manage-event{
     min-height: 100vh;
     overflow-x: hidden;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/static/images/calendar.jpg") center center no-repeat;
+    background:  -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/calendar.jpg") center center no-repeat;
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/calendar.jpg") center center no-repeat;
     background-size: cover;
 }
