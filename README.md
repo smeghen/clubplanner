@@ -190,7 +190,14 @@ for the site. These were created using Balsamiq.
 * HTML -  HTML is the main language used for the structure of the site.
 * CSS - Custom written CSS is used to style the site.
 * Materialize – The layout and styling of the site was helped by the use of Materialize framework.
-* Google Fonts -The font of Open Sans was imported from Google Fonts.
+* JavaScript - Utilized for form validation
+* jQuery - Used for various Materialize components such as, Datepicker, Timepicker, Dropdown menu, side navbar, parallax image and modal.
+* Python - Python is used as the back-end programming language.
+* Flask - Python microframework Flask is used to create this project.
+* Jinja - Jinja templating language is used with Flask in the HTML code.
+* PyMongo - Used as a Python distribution that contains tools to work with MongoDB.
+* MongoDB - Database used to create the document based collections for the data storage of this site.
+* Heroku - Hosting platform to deploy the live site.
 * Font Awesome – Was used to obtain the social media icons used.
 * Balsamiq – Was used to create the wireframes of the site on the various devices.
 * Adobe Photoshop Express - Used to resize images used on the site. https://www.adobe.com/ie/photoshop/online/resize-image.html
@@ -201,6 +208,7 @@ for the site. These were created using Balsamiq.
 * W3 HTML Validation was done via https://validator.w3.org/
 * W3 CSS Validation was done via https://jigsaw.w3.org/css-validator/
 * Validation of JavaScript was done via https://jshint.com/
+* Pep8 Online for Pyhton was done via http://pep8online.com/ 
 * Google Chrome DevTools – was used extensively during coding to check the responsiveness of the site with the addition of new features.
 ---
 # Testing
