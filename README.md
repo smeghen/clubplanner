@@ -234,7 +234,29 @@ experience and any bugs that they found. Within this group of people the site wa
 
 #### Validators
 
+I used the W3 HTML Validation and got only 2 warning messages:
 
+![HTML Validator Results](static/images/testing/HTML-Validator.PNG "HTML Validator Results")
+
+These are warnings relating to heading elements in sections that are not relevant to the contain of the sections mentioned.
+
+W3 CSS Validation was used to check the CSS used for the site:
+
+![CSS Validator Results](static/images/testing/CSS-Validator.PNG "CSS Validator Results")
+
+The error message relates to the Materialize cdn which is below my control.
+
+I used Pep8 Online for checking my Pyhton code. When I first checked it I got the following:
+
+![First PEP8 Results](static/images/testing/First-PEP8-Check.PNG "First PEP8 Results")
+
+After going over the different issues highlighted I rechecked the code and got the below result:
+
+![Revised PEP8 Results](static/images/testing/Revised-PEP8-Check.PNG "Revised PEP8 Results")
+
+JSHint was used to validate the JavaScript and jQuery:
+
+![JSHint Results](static/images/testing/jshint-results.PNG "JSHint Results")
 
 
 
