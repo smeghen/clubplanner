@@ -170,10 +170,12 @@ textarea{
 
 .datepicker-controls .select-month input{
     color: black;
+    width: 125px;
 }
 
 .datepicker-controls .select-year input{
     color: black;
+    width: 50px;
 }
 
 /*---- Footer ----*/
