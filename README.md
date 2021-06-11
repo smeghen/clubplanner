@@ -233,6 +233,9 @@ experience and any bugs that they found. Within this group of people the site wa
 * Some feedback that I received was in relation to the Datepicker and the fact that you could book events in the past. This capability could cause potential issues if Users incorrectly enter dates, to
 prevent this from happening I put a minDate: new Date() into the Datepicker JS function, which sets the minimum date available to select as today. In this way past dates are not available for selection.
 
+* When a user is logged in buttons to Register and Login still appear on the Home page parallax image. By using {% if session.user %} was able to remove them from the page and with the {% else %} show all buttons to user not
+logged in.
+
 
 
 #### Validators
