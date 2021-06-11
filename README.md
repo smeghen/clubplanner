@@ -242,6 +242,9 @@ to below the Parallax image so that it is more accessible.
 * Was observed on the Datepicker that for the long named months the letters were getting pushed behind the year. After checking on Dev Tools, was able to identify the style class involved and adjusted it so 
 that full month name is now visible.
 
+* Was found that by copying the url from one browrser to another for a logged in user then the login steps could be by past and changes could be made to events. I rectified this 
+by adding a check for Profile, Create Event and Edit Event pages to confirm that "user" in is session then they can proceed, otherwise they are redirected to the login page.
+
 
 
 #### Validators

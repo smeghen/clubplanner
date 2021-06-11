@@ -122,80 +122,86 @@ def manage(username):
         return render_template(
             "manage.html", user=user, events=events)
 
-    return redirect(url_for(login))
+    return redirect(url_for("login"))
 
 
 # Create an Event
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
-    if request.method == "POST":
-        # check if Facility is already booked for Date and time
-        date = request.form.get("event_date")
-        time = request.form.get("event_time")
-        venue = request.form.get("facility_name")
-        if mongo.db.events.find_one(
-                {"event_date": date,
-                 "event_time": time,
-                 "facility_name": venue}
-                ):
-            flash("Facility already booked!")
-            return redirect(url_for("add_event"))
-        # If facility free then details passed to db
-        event = {
-            "event_name": request.form.get("event_name"),
-            "facility_name": request.form.get("facility_name"),
-            "event_description": request.form.get("event_description"),
-            "event_date": request.form.get("event_date"),
-            "event_time": request.form.get("event_time"),
-            "group_name": request.form.get("group_name"),
-            "created_by": session["user"]
-        }
-        mongo.db.events.insert_one(event)
-        flash("Task Successfully Added")
-        return redirect(url_for("manage", username=session["user"]))
-    facilities = mongo.db.facilities.find().sort("facility_name", 1)
-    groups = mongo.db.groups.find()
-    return render_template(
-        "add_event.html", facilities=facilities, groups=groups)
+    if "user" in session:
+        if request.method == "POST":
+            # check if Facility is already booked for Date and time
+            date = request.form.get("event_date")
+            time = request.form.get("event_time")
+            venue = request.form.get("facility_name")
+            if mongo.db.events.find_one(
+                    {"event_date": date,
+                    "event_time": time,
+                    "facility_name": venue}
+                    ):
+                flash("Facility already booked!")
+                return redirect(url_for("add_event"))
+            # If facility free then details passed to db
+            event = {
+                "event_name": request.form.get("event_name"),
+                "facility_name": request.form.get("facility_name"),
+                "event_description": request.form.get("event_description"),
+                "event_date": request.form.get("event_date"),
+                "event_time": request.form.get("event_time"),
+                "group_name": request.form.get("group_name"),
+                "created_by": session["user"]
+            }
+            mongo.db.events.insert_one(event)
+            flash("Task Successfully Added")
+            return redirect(url_for("manage", username=session["user"]))
+        facilities = mongo.db.facilities.find().sort("facility_name", 1)
+        groups = mongo.db.groups.find()
+        return render_template(
+            "add_event.html", facilities=facilities, groups=groups)
+
+    return redirect(url_for("login"))
 
 
 # Edit events that the user has created
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
-    if request.method == "POST":
-        # check if Facility is already booked for Date and time
-        date = request.form.get("event_date")
-        time = request.form.get("event_time")
-        venue = request.form.get("facility_name")
+    if "user" in session:
+        if request.method == "POST":
+            # check if Facility is already booked for Date and time
+            date = request.form.get("event_date")
+            time = request.form.get("event_time")
+            venue = request.form.get("facility_name")
 
-        if mongo.db.events.find_one(
-                {"event_date": date,
-                 "event_time": time,
-                 "facility_name": venue,
-                 "_id": {"$ne": ObjectId(event_id)}}
-                ):
-            flash("Facility already booked!")
+            if mongo.db.events.find_one(
+                    {"event_date": date,
+                    "event_time": time,
+                    "facility_name": venue,
+                    "_id": {"$ne": ObjectId(event_id)}}
+                    ):
+                flash("Facility already booked!")
+                return redirect(url_for('manage', username=session["user"]))
+
+            # If facility free db updated
+            submit = {
+                "event_name": request.form.get("event_name"),
+                "facility_name": request.form.get("facility_name"),
+                "event_description": request.form.get("event_description"),
+                "event_date": request.form.get("event_date"),
+                "event_time": request.form.get("event_time"),
+                "group_name": request.form.get("group_name"),
+                "created_by": session["user"]
+                }
+            mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
+            flash("Task Successfully Updated")
             return redirect(url_for('manage', username=session["user"]))
 
-        # If facility free db updated
-        submit = {
-            "event_name": request.form.get("event_name"),
-            "facility_name": request.form.get("facility_name"),
-            "event_description": request.form.get("event_description"),
-            "event_date": request.form.get("event_date"),
-            "event_time": request.form.get("event_time"),
-            "group_name": request.form.get("group_name"),
-            "created_by": session["user"]
-            }
-        mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
-        flash("Task Successfully Updated")
-        return redirect(url_for('manage', username=session["user"]))
+        event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+        facilities = mongo.db.facilities.find().sort("facility_name", 1)
+        groups = mongo.db.groups.find()
+        return render_template(
+            "edit_event.html", event=event, facilities=facilities, groups=groups)
 
-    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
-    facilities = mongo.db.facilities.find().sort("facility_name", 1)
-    groups = mongo.db.groups.find()
-    return render_template(
-        "edit_event.html", event=event, facilities=facilities, groups=groups)
+    return redirect(url_for("login"))
 
 
 # Delete an event that a user has created
@@ -207,7 +213,7 @@ def delete_event(event_id):
         flash("Event Successfully Deleted")
         return redirect(url_for('manage', username=session["user"]))
 
-    return render_template("login.html")
+    return redirect(url_for("login"))
 
 
 @app.errorhandler(404)
