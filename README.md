@@ -239,6 +239,9 @@ logged in.
 * Orginally on the Home page I had the Search option below the Event displayed, some users commented that it was too far down the page to find especially on smaller screens. To make it easier for users I moved it 
 to below the Parallax image so that it is more accessible.
 
+* Was observed on the Datepicker that for the long named months the letters were getting pushed behind the year. After checking on Dev Tools, was able to identify the style class involved and adjusted it so 
+that full month name is now visible.
+
 
 
 #### Validators
