@@ -230,6 +230,9 @@ Family members, peers of Slack and friends were asked to test the website and pr
 experience and any bugs that they found. Within this group of people the site was viewed on the following devices
  – Desktop, Laptop, iPad mini, iPad, iPhone 6, iPhone 8, Samsung Galaxy S6 and Huawei P30.
 
+* Some feedback that I received was in relation to the Datepicker and the fact that you could book events in the past. This capability could cause potential issues if Users incorrectly enter dates, to
+prevent this from happening I put a minDate: new Date() into the Datepicker JS function, which sets the minimum date available to select as today. In this way past dates are not available for selection.
+
 
 
 #### Validators
