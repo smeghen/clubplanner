@@ -236,6 +236,9 @@ prevent this from happening I put a minDate: new Date() into the Datepicker JS f
 * When a user is logged in buttons to Register and Login still appear on the Home page parallax image. By using {% if session.user %} was able to remove them from the page and with the {% else %} show all buttons to user not
 logged in.
 
+* Orginally on the Home page I had the Search option below the Event displayed, some users commented that it was too far down the page to find especially on smaller screens. To make it easier for users I moved it 
+to below the Parallax image so that it is more accessible.
+
 
 
 #### Validators
