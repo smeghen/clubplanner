@@ -2,6 +2,8 @@
     jQuery for MaterializeCSS initialization
 */
 
+
+
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $('.parallax').parallax();
@@ -12,6 +14,7 @@ $(document).ready(function () {
         format: "dd mmmm yyyy",
         yearRange: 2,
         showClearBtn: true,
+        minDate: new Date(),
         i18n: {
             done: "Select"
         }
