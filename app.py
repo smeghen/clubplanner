@@ -10,6 +10,7 @@ if os.path.exists("env.py"):
     import env
 
 
+#-----------Configuration  -------------------
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -19,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# -------- Home Page -------------------------
 @app.route("/")
 @app.route("/get_events")
 def get_events():
@@ -51,7 +53,7 @@ def search():
     return render_template("events.html", events=events)
 
 
-# Register a new user to the db
+# Register a new user to the db ---------------------------------
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -76,7 +78,7 @@ def register():
     return render_template("register.html")
 
 
-# Login for Existing users
+# Login for Existing users -----------------------------------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -103,6 +105,7 @@ def login():
     return render_template("login.html")
 
 
+# ------- Logout ----------------------------------
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -125,7 +128,7 @@ def manage(username):
     return redirect(url_for("login"))
 
 
-# Create an Event
+# Create an Event ----------------------------------------
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
     if "user" in session:
@@ -136,8 +139,8 @@ def add_event():
             venue = request.form.get("facility_name")
             if mongo.db.events.find_one(
                     {"event_date": date,
-                    "event_time": time,
-                    "facility_name": venue}
+                     "event_time": time,
+                     "facility_name": venue}
                     ):
                 flash("Facility already booked!")
                 return redirect(url_for("add_event"))
@@ -162,7 +165,7 @@ def add_event():
     return redirect(url_for("login"))
 
 
-# Edit events that the user has created
+# Edit events that the user has created ----------------------------------
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     if "user" in session:
@@ -174,9 +177,9 @@ def edit_event(event_id):
 
             if mongo.db.events.find_one(
                     {"event_date": date,
-                    "event_time": time,
-                    "facility_name": venue,
-                    "_id": {"$ne": ObjectId(event_id)}}
+                     "event_time": time,
+                     "facility_name": venue,
+                     "_id": {"$ne": ObjectId(event_id)}}
                     ):
                 flash("Facility already booked!")
                 return redirect(url_for('manage', username=session["user"]))
@@ -199,12 +202,13 @@ def edit_event(event_id):
         facilities = mongo.db.facilities.find().sort("facility_name", 1)
         groups = mongo.db.groups.find()
         return render_template(
-            "edit_event.html", event=event, facilities=facilities, groups=groups)
+            "edit_event.html", event=event,
+            facilities=facilities, groups=groups)
 
     return redirect(url_for("login"))
 
 
-# Delete an event that a user has created
+# Delete an event that a user has created ----------------------------------
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     # Remove event from db
@@ -216,6 +220,7 @@ def delete_event(event_id):
     return redirect(url_for("login"))
 
 
+# ------------ Error Handlers --------------------------------------------
 @app.errorhandler(404)
 def not_found_error(error):
     #  404 error function
@@ -228,6 +233,7 @@ def internal_error(error):
     return render_template('500.html', error=error), 500
 
 
+# ------------Run App ------------------------------------------------
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
