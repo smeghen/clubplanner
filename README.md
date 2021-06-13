@@ -187,29 +187,29 @@ for the site. These were created using Balsamiq.
 
 ---
 ## Technologies Used
-* HTML -  HTML is the main language used for the structure of the site.
-* CSS - Custom written CSS is used to style the site.
-* Materialize – The layout and styling of the site was helped by the use of Materialize framework.
-* JavaScript - Utilized for form validation
-* jQuery - Used for various Materialize components such as, Datepicker, Timepicker, Dropdown menu, side navbar, parallax image and modal.
-* Python - Python is used as the back-end programming language.
-* Flask - Python microframework Flask is used to create this project.
-* Jinja - Jinja templating language is used with Flask in the HTML code.
-* PyMongo - Used as a Python distribution that contains tools to work with MongoDB.
-* MongoDB - Database used to create the document based collections for the data storage of this site.
-* Heroku - Hosting platform to deploy the live site.
-* Font Awesome – Was used to obtain the social media icons used.
-* Balsamiq – Was used to create the wireframes of the site on the various devices.
-* Adobe Photoshop Express - Used to resize images used on the site. https://www.adobe.com/ie/photoshop/online/resize-image.html
-* Git - Git is used for the version control of changes throughout the project.
-* GitPod – was used as the coding space for the project.
-* Github - was used to host the project files and publish the live website by using Git Pages.
-* Autoprefixer - was used to parse  CSS and add vendor prefixes to CSS rules via https://autoprefixer.github.io/
-* W3 HTML Validation was done via https://validator.w3.org/
-* W3 CSS Validation was done via https://jigsaw.w3.org/css-validator/
-* Validation of JavaScript was done via https://jshint.com/
-* Pep8 Online for Pyhton was done via http://pep8online.com/ 
-* Google Chrome DevTools – was used extensively during coding to check the responsiveness of the site with the addition of new features.
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) -  HTML is the main language used for the structure of the site.
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Custom written CSS is used to style the site.
+* [Materialize](https://materializecss.com/) – The layout and styling of the site was helped by the use of Materialize framework.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Utilized for form validation
+* [jQuery](https://jquery.com/) - Used for various Materialize components such as, Datepicker, Timepicker, Dropdown menu, side navbar, parallax image and modal.
+* [Python](https://www.python.org/) - Python is used as the back-end programming language.
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Python microframework Flask is used to create this project.
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Jinja templating language is used with Flask in the HTML code.
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Werkzeug is used for password hashing and authentication and autohorization.
+* [MobgoDB](https://www.mongodb.com/1) - Database used to create the document based collections for the data storage of this site.
+* [Heroku](https://dashboard.heroku.com/) - Hosting platform to deploy the live site.
+* [Font Awesome](https://fontawesome.com/) – Was used to obtain the social media icons used.
+* [Balsamiq](https://balsamiq.com//)Balsamiq – Was used to create the wireframes of the site on the various devices.
+* [Adobe Photoshop Express](https://www.adobe.com/ie/photoshop/online/resize-image.html) - Used to resize images used on the site. 
+* [Git](https://git-scm.com/) - Git is used for the version control of changes throughout the project.
+* [Gitpod](https://www.gitpod.io/) – was used as the coding space for the project.
+* [GitHub](https://github.com/) - was used to host the project files and publish the live website by using Git Pages.
+* [Autoprefixer](https://autoprefixer.github.io/) - was used to parse  CSS and add vendor prefixes to CSS rules via https://autoprefixer.github.io/
+* [W3C Markup Validation Service](https://validator.w3.org/) - W3C Markup Validation Service is used to check whether there were any errors in the HTML5 code.
+* [W3C CSS validator](https://jigsaw.w3.org/css-validator/) - The W3C CSS validator is used to check whether there were any errors in the CSS3 code.
+* [JShint](https://jshint.com/) - JavaScript validator that is used to check whether there were any errors in the JavaScript code.
+* [PEP8](http://pep8online.com/) - The PEP8 validator is used to check whether there were any errors in the Python code.
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) – was used extensively during coding to check the responsiveness of the site with the addition of new features.
 ---
 # Testing
 
