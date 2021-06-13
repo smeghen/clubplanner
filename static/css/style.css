@@ -165,6 +165,12 @@ textarea{
     margin-bottom: 10px;
 }
 
+/* Detail Modal */
+
+.modal-text{
+    font-size: 1.25rem;
+}
+
 .line {
     width: 70%;
     border: 1px solid;
