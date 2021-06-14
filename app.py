@@ -45,6 +45,33 @@ def get_events():
     return render_template("events.html", events=events)
 
 
+@app.route("/summary")
+def summary():
+    all_events = list(mongo.db.events.find())
+    today_date = date.today()
+    events = list()
+
+    for event in all_events:
+        event_date = datetime.strptime(event.get(
+            'event_date'), '%d %B %Y').date()
+        if event_date > today_date:
+            event['event_date'] = event_date
+            events.append(event)
+    events.sort(key=lambda x: x['event_date'])
+
+    for event in events:
+        event['event_date'] = datetime.strftime(
+            event.get('event_date'), '%d %B %Y')
+    return render_template("summary.html", events=events)
+
+
+@app.route("/searchall", methods=["GET", "POST"])
+def searchall():
+    query = request.form.get("query")
+    events = list(mongo.db.events.find({"$text": {"$search": query}}))
+    return render_template("summary.html", events=events)
+
+
 # Search function for taking user input and search db for relevant results
 @app.route("/search", methods=["GET", "POST"])
 def search():
