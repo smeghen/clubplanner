@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<section id="manage-event">
 
 <!--   Events Display     -->
-<H2 class="grey-text text-darken-4 center-align">Summary of All Events</H2>
+<H2 class="login center-align">Summary of All Events</H2>
 
 <div class="row">
     {% if session.user %}
@@ -31,5 +31,7 @@
         </div>
     </div>
 </div>
+
+</section>
 
 {% endblock %}
