@@ -182,10 +182,13 @@ confirm the availability.
 Delete Event Page – User will be asked if they are sure they want to delete an event. If they do then the event will be deleted and Facility, Date and 
 Time will become available again.
 
+Summary Page - All created Events sorted by date are displayed in list format, with the Facility name, Event name, date and time being shown. This page is visible to Registered 
+and Non-registered users and the links on the page changing accordingly.
+
 ### Features to be Implemented in Future
 
 * Contact page with standard form for asking questions or passing on suggestions.
-* A list diplaying bookings for each Facility sorted by Date, so that users at a glance will be able to see potential availability.
+* Have a calander view for each facility, so that users can see availability without having to search through events.
 * Administration Function for assisting with Users that forget passwords or usernames. 
 * Administration Function that has the permission to Edit or Delete any events, so that assistance can be given to Users.
 
@@ -283,6 +286,9 @@ that full month name is now visible.
 
 * Was found that by copying the url from one browrser to another for a logged in user then the login steps could be by past and changes could be made to events. I rectified this 
 by adding a check for Profile, Create Event and Edit Event pages to confirm that user is in session then they can proceed, otherwise they are redirected to the login page.
+
+* One User asked for a page to view events so that you could check availability of a facility before going to the Create page. Based on this feedback I created a Summary page which 
+displays list of all upcoming events sorted by date. Displayed for each event is the Facility, Event Name, Date and Time, so that at a glance users can see what is coming up. 
 
 
 

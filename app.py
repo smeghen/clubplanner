@@ -65,13 +65,6 @@ def summary():
     return render_template("summary.html", events=events)
 
 
-@app.route("/searchall", methods=["GET", "POST"])
-def searchall():
-    query = request.form.get("query")
-    events = list(mongo.db.events.find({"$text": {"$search": query}}))
-    return render_template("summary.html", events=events)
-
-
 # Search function for taking user input and search db for relevant results
 @app.route("/search", methods=["GET", "POST"])
 def search():
