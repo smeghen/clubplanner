@@ -2,123 +2,124 @@
 {% block content %}
 
 <section id="manage-event">
-    
+
     <H1 class="login center-align">Profile</H1>
     <!--Code for checking if there are results in db got from https://stackoverflow.com/questions/65477524/flask-and-jinja-template-throwing-error-object-of-type-cursor-has-no-len -->
     {% if events.count() > 0 %}
     <h3 class="login center-align">Here are the Events you created {{ user.username.capitalize() }} </h3>
-    
-                            <div class="row">
-                                <p class="center-align">
-                                    <a href="{{ url_for('add_event') }}"
-                                        class="waves-effect waves-light blue lighten-3 btn">Create Event</a>
-                                </p>
-                            </div>
-        
-        <div class="row event-card">    
-        {% for event in events %}
-                <div class="container">
-                    <div class="card small brown lighten-5 grey-text text-darken-4 hoverable col s12 m10 offset-m1 l4">
-                        <div class="card-title  center-align">
-                            <span class="text-align-center ">
-                                <strong>{{ event.group_name }}</strong><br>
-                            </span>
-                            {% if event.facility_name|lower() == "main pitch" %}
-                            <i class="material-icons prefix">sports_volleyball</i>
-                            {% elif event.facility_name|lower() == "club house" %}
-                            <i class="material-icons prefix">other_houses</i>
-                            {% elif event.facility_name|lower() == "training pitch"%}
-                            <i class="material-icons prefix">directions_run</i>
-                            {% endif %}
 
-                            <div class="card-content">
-                                <span class=" text-align-center center-align">
-                                <strong>{{ event.event_name}}</strong><br>
-                                <i class="card-text">Date:</i> {{ event.event_date }}<br>
-                                <i class="card-text">Time:</i> {{ event.event_time }}<br>
-                                <br>
+    <div class="row">
+        <p class="center-align">
+            <a href="{{ url_for('add_event') }}" class="waves-effect waves-light blue lighten-3 btn">Create Event</a>
+        </p>
+    </div>
+
+    <div class="row event-card">
+        {% for event in events %}
+        <div class="container">
+            <div class="card small brown lighten-5 grey-text text-darken-4 hoverable col s12 m10 offset-m1 l4">
+                <div class="card-title  center-align">
+                    <span class="text-align-center ">
+                        <strong>{{ event.group_name }}</strong><br>
+                    </span>
+                    {% if event.facility_name|lower() == "main pitch" %}
+                    <i class="material-icons prefix">sports_volleyball</i>
+                    {% elif event.facility_name|lower() == "club house" %}
+                    <i class="material-icons prefix">other_houses</i>
+                    {% elif event.facility_name|lower() == "training pitch"%}
+                    <i class="material-icons prefix">directions_run</i>
+                    {% endif %}
+
+                    <div class="card-content">
+                        <span class=" text-align-center center-align">
+                            <strong>{{ event.event_name}}</strong><br>
+                            <i class="card-text">Date:</i> {{ event.event_date }}<br>
+                            <i class="card-text">Time:</i> {{ event.event_time }}<br>
                             <br>
-                                </span>
-                            </div>
-                                    <div class="card-action">
-                                        <a href="#details-modal-{{event._id}}" class="waves-effect waves-light green lighten-2 btn modal-trigger">Full Details</a>
-                                    </div>
-                                    </div>
+                            <br>
+                        </span>
+                    </div>
+                    <div class="card-action">
+                        <a href="#details-modal-{{event._id}}"
+                            class="waves-effect waves-light green lighten-2 btn modal-trigger">Full Details</a>
                     </div>
                 </div>
-
-                            <!-- Details Modal -->
-                            <div id="details-modal-{{event._id}}" class="modal center-align brown lighten-5">
-                                <div class="modal-text brown lighten-5 grey-text text-darken-4 col s12 m10 offset-m1">
-                        <div class="center-align">
-                            <span class=" text-align-center ">
-                                <strong>{{ event.group_name }}</strong><br>
-                            </span>
-                            <hr class="line">
-                            {% if event.facility_name|lower() == "main pitch" %}
-                            <i class="material-icons prefix">sports_volleyball</i>
-                            {% elif event.facility_name|lower() == "club house" %}
-                            <i class="material-icons prefix">other_houses</i>
-                            {% elif event.facility_name|lower() == "training pitch"%}
-                            <i class="material-icons prefix">directions_run</i>
-                            {% endif %}
-
-                            <div class="card-content">
-                                <span class=" text-align-center center-align">
-                                <strong>{{ event.event_name}}</strong><br>
-                                <i class="card-text">Date:</i> {{ event.event_date }}<br>
-                                <i class="card-text">Time:</i> {{ event.event_time }}<br>
-                                <i class="card-text">Location:</i> {{ event.facility_name }}<br>
-                                <i class="card-text">Detail:</i> {{ event.event_description }}<br>
-                                <br>
-                            <br>
-                            
-
-                                </span>
-                            </div>
-                            
-                        {% if session.user %}
-                            
-                                <p class="center-align">
-                                    <a href="{{ url_for('edit_event', event_id=event._id) }}" class="waves-effect waves-light blue lighten-3 btn">Edit</a>
-                                    <a href="#delete-modal-{{event._id}}" class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
-                                </p>
-                            </div>
-                            
-                            
-                        {% endif %}
-                        </div>
-
-
-                            <!-- Delete Modal -->
-                            <div id="delete-modal-{{event._id}}" class="modal center-align">
-                                <div class="modal-content brown lighten-3 center-align">
-                                    <h4>Warning</h4>
-                                    <p>Are you sure you want to delete the this event?</p>
-                                    <p class="center-align">
-                                        <a href="{{ url_for('delete_event', event_id=event._id) }}"
-                                            class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
-                                        <a href="{{ url_for('manage', username=session['user']) }}"
-                                            class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                
-                {% endfor %} 
+            </div>
         </div>
-        {% else %}
-        <h3 class="login center-align">You currently have no Events {{ user.username.capitalize() }} </h3>
-                            <div class="row">
-                                <p class="center-align">
-                                    <a href="{{ url_for('add_event') }}"
-                                        class="waves-effect waves-light blue lighten-3 btn">Create Event</a>
-                                </p>
-                            </div>
 
-        {% endif %}
-  
+        <!-- Details Modal -->
+        <div id="details-modal-{{event._id}}" class="modal center-align brown lighten-5">
+            <div class="modal-text brown lighten-5 grey-text text-darken-4 col s12 m10 offset-m1">
+                <div class="center-align">
+                    <span class=" text-align-center ">
+                        <strong>{{ event.group_name }}</strong><br>
+                    </span>
+                    <hr class="line">
+                    {% if event.facility_name|lower() == "main pitch" %}
+                    <i class="material-icons prefix">sports_volleyball</i>
+                    {% elif event.facility_name|lower() == "club house" %}
+                    <i class="material-icons prefix">other_houses</i>
+                    {% elif event.facility_name|lower() == "training pitch"%}
+                    <i class="material-icons prefix">directions_run</i>
+                    {% endif %}
+
+                    <div class="card-content">
+                        <span class=" text-align-center center-align">
+                            <strong>{{ event.event_name}}</strong><br>
+                            <i class="card-text">Date:</i> {{ event.event_date }}<br>
+                            <i class="card-text">Time:</i> {{ event.event_time }}<br>
+                            <i class="card-text">Location:</i> {{ event.facility_name }}<br>
+                            <i class="card-text">Detail:</i> {{ event.event_description }}<br>
+                            <br>
+                            <br>
+
+
+                        </span>
+                    </div>
+
+                    {% if session.user %}
+
+                    <p class="center-align">
+                        <a href="{{ url_for('edit_event', event_id=event._id) }}"
+                            class="waves-effect waves-light blue lighten-3 btn">Edit</a>
+                        <a href="#delete-modal-{{event._id}}"
+                            class="waves-effect waves-light red lighten-2 btn modal-trigger">Delete</a>
+                    </p>
+                </div>
+
+
+                {% endif %}
+            </div>
+
+
+            <!-- Delete Modal -->
+            <div id="delete-modal-{{event._id}}" class="modal center-align">
+                <div class="modal-content brown lighten-3 center-align">
+                    <h4>Warning</h4>
+                    <p>Are you sure you want to delete the this event?</p>
+                    <p class="center-align">
+                        <a href="{{ url_for('delete_event', event_id=event._id) }}"
+                            class="modal-close waves-effect waves-light blue lighten-3 btn">Delete</a>
+                        <a href="{{ url_for('manage', username=session['user']) }}"
+                            class="modal-close waves-effect waves-light red lighten-2 btn">Cancel</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3 class="login center-align">You currently have no Events {{ user.username.capitalize() }} </h3>
+    <div class="row">
+        <p class="center-align">
+            <a href="{{ url_for('add_event') }}" class="waves-effect waves-light blue lighten-3 btn">Create Event</a>
+        </p>
+    </div>
+
+    {% endif %}
+
 </section>
 
 

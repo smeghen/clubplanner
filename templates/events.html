@@ -52,73 +52,72 @@
 
 <div class="row">
     {% for event in events %}
-                    <div class="container">
-                    <div class="card small brown lighten-5 grey-text text-darken-4 hoverable col s12 m10 offset-m1 l4">
-                        <div class="card-title  center-align">
-                            <span class="text-align-center ">
-                                <strong>{{ event.group_name }}</strong><br>
-                            </span>
-                            {% if event.facility_name|lower() == "main pitch" %}
-                            <i class="material-icons prefix">sports_volleyball</i>
-                            {% elif event.facility_name|lower() == "club house" %}
-                            <i class="material-icons prefix">other_houses</i>
-                            {% elif event.facility_name|lower() == "training pitch"%}
-                            <i class="material-icons prefix">directions_run</i>
-                            {% endif %}
+    <div class="container">
+        <div class="card small brown lighten-5 grey-text text-darken-4 hoverable col s12 m10 offset-m1 l4">
+            <div class="card-title  center-align">
+                <span class="text-align-center ">
+                    <strong>{{ event.group_name }}</strong><br>
+                </span>
+                {% if event.facility_name|lower() == "main pitch" %}
+                <i class="material-icons prefix">sports_volleyball</i>
+                {% elif event.facility_name|lower() == "club house" %}
+                <i class="material-icons prefix">other_houses</i>
+                {% elif event.facility_name|lower() == "training pitch"%}
+                <i class="material-icons prefix">directions_run</i>
+                {% endif %}
 
-                            <div class="card-content">
-                                <span class=" text-align-center center-align">
-                                <strong>{{ event.event_name}}</strong><br>
-                                <i class="card-text">Date:</i> {{ event.event_date }}<br>
-                                <i class="card-text">Time:</i> {{ event.event_time }}<br>
-                                <br>
-                            <br>
-                                </span>
-                            </div>
-                                    <div class="card-action">
-                                        <a href="#details-modal-{{event._id}}" class="waves-effect waves-light green lighten-2 btn modal-trigger">Full Details</a>
-                                    </div>
-                                    </div>
-                    </div>
+                <div class="card-content">
+                    <span class=" text-align-center center-align">
+                        <strong>{{ event.event_name}}</strong><br>
+                        <i class="card-text">Date:</i> {{ event.event_date }}<br>
+                        <i class="card-text">Time:</i> {{ event.event_time }}<br>
+                        <br>
+                        <br>
+                    </span>
                 </div>
-                
-    
-                            <!-- Details Modal -->
-                            <div id="details-modal-{{event._id}}" class="modal center-align brown lighten-5">
-                                <div class="modal-text brown lighten-5 grey-text text-darken-4 col s12 m10 offset-m1">
-                        <div class="center-align">
-                            <span class=" text-align-center ">
-                                <strong>{{ event.group_name }}</strong><br>
-                            </span>
-                            <hr class="line">
-                            {% if event.facility_name|lower() == "main pitch" %}
-                            <i class="material-icons prefix">sports_volleyball</i>
-                            {% elif event.facility_name|lower() == "club house" %}
-                            <i class="material-icons prefix">other_houses</i>
-                            {% elif event.facility_name|lower() == "training pitch"%}
-                            <i class="material-icons prefix">directions_run</i>
-                            {% endif %}
-
-                            <div class="card-content">
-                                <span class=" text-align-center center-align">
-                                <strong>{{ event.event_name}}</strong><br>
-                                <i class="card-text">Date:</i> {{ event.event_date }}<br>
-                                <i class="card-text">Time:</i> {{ event.event_time }}<br>
-                                <i class="card-text">Location:</i> {{ event.facility_name }}<br>
-                                <i class="card-text">Detail:</i> {{ event.event_description }}<br>
-                                <br>
-                            <br>
-                            
-
-                                </span>
-                            </div>
-                          </div>  
-                        </div>
-                        </div>
-                        
-                {% endfor %} 
+                <div class="card-action">
+                    <a href="#details-modal-{{event._id}}"
+                        class="waves-effect waves-light green lighten-2 btn modal-trigger">Full Details</a>
                 </div>
+            </div>
         </div>
+    </div>
+
+
+    <!-- Details Modal -->
+    <div id="details-modal-{{event._id}}" class="modal center-align brown lighten-5">
+        <div class="modal-text brown lighten-5 grey-text text-darken-4 col s12 m10 offset-m1">
+            <div class="center-align">
+                <span class=" text-align-center ">
+                    <strong>{{ event.group_name }}</strong><br>
+                </span>
+                <hr class="line">
+                {% if event.facility_name|lower() == "main pitch" %}
+                <i class="material-icons prefix">sports_volleyball</i>
+                {% elif event.facility_name|lower() == "club house" %}
+                <i class="material-icons prefix">other_houses</i>
+                {% elif event.facility_name|lower() == "training pitch"%}
+                <i class="material-icons prefix">directions_run</i>
+                {% endif %}
+
+                <div class="card-content">
+                    <span class=" text-align-center center-align">
+                        <strong>{{ event.event_name}}</strong><br>
+                        <i class="card-text">Date:</i> {{ event.event_date }}<br>
+                        <i class="card-text">Time:</i> {{ event.event_time }}<br>
+                        <i class="card-text">Location:</i> {{ event.facility_name }}<br>
+                        <i class="card-text">Detail:</i> {{ event.event_description }}<br>
+                        <br>
+                        <br>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+</div>
         
 
 

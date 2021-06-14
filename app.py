@@ -10,7 +10,7 @@ if os.path.exists("env.py"):
     import env
 
 
-#-----------Configuration  -------------------
+# -----------Configuration  -------------------
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -155,7 +155,7 @@ def add_event():
                 "created_by": session["user"]
             }
             mongo.db.events.insert_one(event)
-            flash("Task Successfully Added")
+            flash("Event Successfully Added")
             return redirect(url_for("manage", username=session["user"]))
         facilities = mongo.db.facilities.find().sort("facility_name", 1)
         groups = mongo.db.groups.find()
@@ -195,7 +195,7 @@ def edit_event(event_id):
                 "created_by": session["user"]
                 }
             mongo.db.events.update({"_id": ObjectId(event_id)}, submit)
-            flash("Task Successfully Updated")
+            flash("Event Updated")
             return redirect(url_for('manage', username=session["user"]))
 
         event = mongo.db.events.find_one({"_id": ObjectId(event_id)})

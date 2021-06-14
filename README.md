@@ -15,7 +15,7 @@ and other club activities. The idea being that this is a central location that u
 the various facilities in this case Main Pitch, Training Pitch and the Club House.
 When creating an event, users are booking the required facility based on its availability and for specific groups. 
 An example would be Boys Under 10 Football training on Main pitch at a specific date and time, the application checks the database to see if there are any other
-bookings for the selected facility on the date and time specified. In this this way there is not the possibility of double bookings is prevented. 
+bookings for the selected facility on the date and time specified. In this this way there the possibility of double bookings is prevented. 
 
 This site could be easily modified to other clubs, by modifying the styling of the site and creating a separate database which would be specific to the facilities of that club. 
 
@@ -28,14 +28,14 @@ This site could be easily modified to other clubs, by modifying the styling of t
 * [User Experience(UX)](#User-Experience)
     * [User Stories](#User-Stories)
     * [Structure](#Structure)
+        * [Database Schema](#Database-Schema)
     * [Design](#Design)
         * [Colour Scheme](#Colour-Scheme)
         * [Imagery](#Imagery)
-        * [Database Schema](#Database-Schema)
         * [Wireframes](#Wireframes)
-
     * [Differences to Design](#Differences-to-Design)
-    * [Features to be Implemented in Future](#Features-to-be-Implemented-in-Future)
+    * [Site Features](#Site-Features)
+        * [Features to be Implemented in Future](#Features-to-be-Implemented-in-Future)
 * [Technologies Used](#Technologies-Used)
 * [Testing](#Testing)
     * [Manual Testing](#Manual-Testing)
@@ -59,45 +59,35 @@ This site could be easily modified to other clubs, by modifying the styling of t
 
 #### User Stories:
 *As a Guest User:*
-* I want to immediately understand the nature of the site and learn more about the organisation.
+* I want to immediately understand the nature of the site and learn more about how to use it.
 * I want to be able to easily navigate through the site, with the structure of the content easy to follow.
 * I want to easily log in to the site
 * I want to easily be able to register.
-* I want to be able to create my profile and select the groups that are relevant to me.
+* I want to be able search the upcoming club events.
 * I want to be able to access the site from all device types.
 
 *Registered User:*
-* I want to be able to log onto the website and see the events that are relevant to me.
-* I want to be able to edit my profile by adding/removing groups that I am a member of.
+* I want to be able to log onto the website and see the events that I have created.
 * I want to be easily able to log out of my account.
-* I want to be able to schedule events based on the availability of the facilities.
 * I want to be able to create events.
+* I want to be able to schedule events based on the availability of the facilities.
 * I want to be able to edit events that I have created.
 * I want to be able delete the events that I have created.
-* I want to be able to contact the site owner with any questions I may have in regards to the website.
 
 
 ## Structure:
-Home Page – Will have a photo of the Club with buttons to Login and Register. Below this will be the next events for each facility.
 
-Log in Page – For Registered users provides fields for inputting Username and Password. Will also display link for users not already registered.
-
-Register Page – For New users shows fields for Username and Password to register for the site. Once registered they will be directed to their Profile 
-Page. Also, there will be a link for Users to login in case they have navigated to the wrong page.
-
-Profile Page – When a User logs in the Events that they have created will be displayed, or if they do not have any Events created notifying that there is none. There will be links for Creating an event and Editing an event. 
-
-Schedule Event Page – Create an event using Dropdown for Facility, Date and Time Picker. Will also assign the Event to specific Group. Availability will be checked to see if the required Time, Date and Facility have already been booked. 
-
-Edit Event Page – Change a scheduled event by changing the specific fields. If a change to Facility, Date or Time is made, a check will take place to 
-confirm the availability.
-
-Delete Event Page – User will be asked if they are sure they want to delete an event. If they do then the event will be deleted and Facility, Date and 
-Time will become available again.
 
 Below is a Site diagram that I used as a basis for the structure of the project:
 
 ![Site Structure](static/images/Site-Structure.png "Site Structure Diagram")
+
+#### Database Schema:
+
+Below is the database schema that I devised for the project:
+
+![Database Schema](static/images/Database-Schema.png "Database Schema")
+
 
 
 ## Design:
@@ -109,21 +99,15 @@ of brown lighten-5 for the cards on the Home page and Profile Page. Also, I used
 
 
 #### Imagery:
-The Calendar image is by Eric Rothermel I obtained from Unsplash and used for both the Home and Profile pages. The background images for Login, Register and Create Event Pages, are pictures of 
+The Calendar image is by Eric Rothermel, which I obtained from Unsplash and used for both the Home and Profile pages. The background images for Login, Register and Create Event Pages, are pictures of 
 the club grounds which I took myself. The Training image Photo by Ambitious Creative Co. Rick Barrett, obtained from Unsplash is used on the Edit event page.
  
-
-#### Database Schema:
-
-Below is the database schema that I devised for the project:
-
-![Database Schema](static/images/Database-Schema.png "Database Schema")
 
 
 #### Wireframes:
 
-Here is the wireframes that I used as the basis of the design
-for the site. These were created using Balsamiq.
+Here are the wireframes that I used as the basis of the design
+for the site. These were created using [Balsamiq](https://balsamiq.com//).
 
 ##### Home Page
 
@@ -176,11 +160,32 @@ for the site. These were created using Balsamiq.
  it makes it easier for users to navigate the site and control their Events.
 
 
+## Site Features
 
+Home Page – Calendar image with buttons to Login and Register. Below this will be the next events for each facility, and also a serach function to search the events that have been
+created.
+
+Log in Page – For Registered users provides fields for inputting Username and Password. Also displays link for users not already registered.
+
+Register Page – For New users shows fields for Username and Password to register for the site. Once registered they will be directed to their Profile 
+Page. Also, there is a link for Users to login in case they have navigated to the wrong page.
+
+Profile Page – When a User logs in the Events that they have created will be displayed, or if they do not have any Events created notifying that there is none. 
+There will be links for Creating an event and Editing an event. 
+
+Create Event Page – Create an event using Dropdown for Facility, Date and Time Picker. Will also assign the Event to specific Group. Availability will be checked to see 
+if the required Time, Date and Facility have already been booked. Messages are displayed if the Event is created or if the Facility is already booked.
+
+Edit Event Page – Change a scheduled event by changing the specific fields. If a change to Facility, Date or Time is made, a check will take place to 
+confirm the availability.
+
+Delete Event Page – User will be asked if they are sure they want to delete an event. If they do then the event will be deleted and Facility, Date and 
+Time will become available again.
 
 ### Features to be Implemented in Future
 
-* Contact page with standard form for asking questions or passing on suggestions
+* Contact page with standard form for asking questions or passing on suggestions.
+* A list diplaying bookings for each Facility sorted by Date, so that users at a glance will be able to see potential availability.
 * Administration Function for assisting with Users that forget passwords or usernames. 
 * Administration Function that has the permission to Edit or Delete any events, so that assistance can be given to Users.
 
@@ -204,7 +209,7 @@ for the site. These were created using Balsamiq.
 * [Git](https://git-scm.com/) - Git is used for the version control of changes throughout the project.
 * [Gitpod](https://www.gitpod.io/) – was used as the coding space for the project.
 * [GitHub](https://github.com/) - was used to host the project files and publish the live website by using Git Pages.
-* [Autoprefixer](https://autoprefixer.github.io/) - was used to parse  CSS and add vendor prefixes to CSS rules via https://autoprefixer.github.io/
+* [Autoprefixer](https://autoprefixer.github.io/) - was used to parse  CSS and add vendor prefixes to CSS rules.
 * [W3C Markup Validation Service](https://validator.w3.org/) - W3C Markup Validation Service is used to check whether there were any errors in the HTML5 code.
 * [W3C CSS validator](https://jigsaw.w3.org/css-validator/) - The W3C CSS validator is used to check whether there were any errors in the CSS3 code.
 * [JShint](https://jshint.com/) - JavaScript validator that is used to check whether there were any errors in the JavaScript code.
@@ -221,7 +226,41 @@ for the site. These were created using Balsamiq.
 
 #### User Stories Testing
 
+> I want to immediately understand the nature of the site and learn more about how to use it.
+* This is addressed in the short site description within the image on the Home page and the About modal that is accessed from the button also on the image on the home page.
 
+> I want to be able to easily navigate through the site, with the structure of the content easy to follow.
+* I kept the navigation of the site easy to use by duplicating the links on the navbar with buttons and having them located logically throughout the site, e.g. there is a Create Event button at the top of the Profile page.
+
+> I want to easily log in to the site.
+
+> I want to easily be able to register.
+* Login and Register links are located on the navbar and buttons for both appear on the Home page image.
+
+> I want to be able search the upcoming club events.
+* There is a Search Function located on the Home page, and within it users can search for Events based on Title, Description, Facility and Group.
+
+> I want to be able to access the site from all device types.
+* The site was designed using the mobile first approach with the specfic understanding that the majority of users would be accessing the site on either tablets or mobile phones. 
+
+> I want to be able to log onto the website and see the events that I have created.
+* Once a user successfully logs in to the site they are automatically taken to their Profile page where the Events that they have created are displayed.
+
+> I want to be easily able to log out of my account.
+* A user can Log out of an account simply by selecting the Log Out navbar link, when logged out a confirmation message appears at the top of the screen.
+
+> I want to be able to create events.
+
+> I want to be able to schedule events based on the availability of the facilities.
+* To navigate to the Create Event page the navbar can be used and also there is a button located at the top of a Users Profile page. Once on the page the user can then complete the required fields on 
+the form to Create an Event. Once the form is submitted the site preforms a check on the database and will notify the user if the facility is not available to be booked.
+
+> I want to be able to edit events that I have created.
+* From the Profile page a user can select an Event that they have created and view the full details. There is a button to Edit the Event. This will bring the user to the Edit Event page, where they can 
+make the required changes. 
+
+> I want to be able delete the events that I have created.
+* From the Profile page a user can select an Event that they have created and view the full details. There is a button to Delete the Event, by selecting this a warning modal appears and the suer can process or cancel.
 
 
 #### User Testing
@@ -243,7 +282,7 @@ to below the Parallax image so that it is more accessible.
 that full month name is now visible.
 
 * Was found that by copying the url from one browrser to another for a logged in user then the login steps could be by past and changes could be made to events. I rectified this 
-by adding a check for Profile, Create Event and Edit Event pages to confirm that "user" in is session then they can proceed, otherwise they are redirected to the login page.
+by adding a check for Profile, Create Event and Edit Event pages to confirm that user is in session then they can proceed, otherwise they are redirected to the login page.
 
 
 
@@ -323,10 +362,6 @@ Enable automatic deployment:
 
 ## Run Locally
 
-The project will not run locally with database connections unless the user sets up an env.py file configuring 
-IP, PORT, MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in order to do this. 
-These details are private and not disclosed in this repository for security purposes.
-
 To run the code locally:
 
 * Navigate to the repository
@@ -340,6 +375,9 @@ Once the project has been loaded, run the command
 
   to install all the required packages.
 
+The project will not run locally with database connections unless the user sets up an env.py file configuring 
+IP, PORT, MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in order to do this. 
+These details are private and not disclosed in this repository for security purposes.
 
 
 ---
@@ -354,12 +392,14 @@ and facility, but upon testing I found that a user could not update the group, d
 Event was actually just finding itself when the date, time and facility had not been edited and returning an Already booked message. The way around this was to put in an extra parameter
 of  "_id": { "$ne": ObjectId(event_id)}. So now the check on the database is for date, time, facility and event id not equal to the id that is being edited, then the event cannot be booked.
 
-* To help highlight the text on the forms for creating and edit an event, I change the colour to white to stand out over the background images. This worked well for all inputs, however for the Datepicker the 
-Month and Date where not visible as is a light coloured background. After a lot of research and trialing different solutions, I was able to resolve the issue with the use og Chrome Dev Tools, by selecting the items involved and finding the 
+* To help highlight the text on the forms for creating and editing an event, I changed the colour to white to stand out over the background images. This worked well for all inputs, however for the Datepicker the 
+Month and Date where not visible as it is a light coloured background. After a lot of research and trialing different solutions, I was able to resolve the issue with the use of Chrome Dev Tools, by selecting the items involved and finding the 
 Materialize css classes that are controlling the colour and adding my own css styling to these classes.
 
 
 # Credits
+
+### Media
 
 
 * Calendar image Photo by <a href="https://unsplash.com/@erothermel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Eric Rothermel</a> 
@@ -368,19 +408,24 @@ on <a href="https://unsplash.com/s/photos/calendar?utm_source=unsplash&utm_mediu
 * Training image Photo by <a href="https://unsplash.com/@weareambitious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ambitious Creative Co.  
  Rick Barrett</a> on <a href="https://unsplash.com/s/photos/team-training?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
- * Found this code for checking that there are results in the database for Events created by user, instead of using {% if events|length > 0 %} https://stackoverflow.com/questions/65477524/flask-and-jinja-template-throwing-error-object-of-type-cursor-has-no-len
-
-  
-  
-
 * Other images of club pitch and grounds taken by myself.
 
-* The Task Manager Miniproject by Code Institute was used as an excellent starting point for this project. Much of the structure of the project was based around this and was adapted
-, modified and expanded to suit the functionality of the porject.
 
-* css styling for getting buttons centered in Materialize Parallax found on https://codepen.io/j_holtslander/pen/NoKqQP 
+  
+### Code
 
-* Used site: https://www.programiz.com/python-programming/datetime go gain understandingof datetime, strptime and strftime functionality.
+
+
+* The Task Manager Miniproject by Code Institute was used as an excellent starting point for this project. Much of the structure of the project was based around this and was adapted, 
+modified and expanded to suit the functionality of the porject.
+
+* Found this code for checking that there are results in the database for Events created by user, instead of using {% if events|length > 0 %} https://stackoverflow.com/questions/65477524/flask-and-jinja-template-throwing-error-object-of-type-cursor-has-no-len
+
+* CSS styling for getting buttons centered in Materialize Parallax found on https://codepen.io/j_holtslander/pen/NoKqQP 
+
+* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image
+
+* Used site: https://www.programiz.com/python-programming/datetime go gain understanding of datetime, strptime and strftime functionality.
 
 * Found the solution to vaildating inputs for Event Name and Description by preventing the usering entering just blank spaces from:
  https://www.freecodecamp.org/news/how-to-check-if-an-input-is-empty-with-css-1a83715f9f3e/
